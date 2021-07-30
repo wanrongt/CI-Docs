@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>DSG BMC CI Process &mdash; BMC CI 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="demo2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> BMC CI
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="demo1.html">this is</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DSG BMC CI Process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#code-repository-gitlab">Code repository — Gitlab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-dsg-bmc-project">Build DSG BMC project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#automatically-trigger-build-tasks-by-jenkins">Automatically trigger build tasks by Jenkins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manually-trigger-tasks-by-jenkins">Manually trigger tasks by Jenkins</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BMC CI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>DSG BMC CI Process</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/demo4.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dsg-bmc-ci-process">
+<h1>DSG BMC CI Process<a class="headerlink" href="#dsg-bmc-ci-process" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="code-repository-gitlab">
+<h2>Code repository — Gitlab<a class="headerlink" href="#code-repository-gitlab" title="Permalink to this headline">¶</a></h2>
+<p>​        <a class="reference external" href="https://github.com/openbmc/openbmc">Openbmc</a> is an open source project , and the <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc">DSG BMC </a> project based on Openbmc is placed in <a class="reference external" href="https://gitlab.devtools.intel.com/">gitlab</a>. We mainly focus on four parts: <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-openbmc">dsg-openbmc-openbmc</a>,  <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-meta-intel">dsg-openbmc-meta-intel</a>, <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/features">features</a> and <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/openbmc-ci">openbmc-ci</a>. As shown in Fig1.</p>
+<ul class="simple">
+<li><p><strong>Dsg-openbmc-openbmc</strong> is obtained by clone of the <strong>Openbmc</strong> in github.</p></li>
+<li><p><strong>Dsg-openbmc-meta-intel</strong> is a project where developers create their own branches for feature development. Some git address links,not the actual code, are placed in the dsg-openbmc-meta-intel file. And the project code of features can be pulled by these links.</p></li>
+<li><p>The project source code is put in the <strong>features</strong> project, and the code is classified in terms of the featrues.</p></li>
+<li><p>Some Jenkinsfile are stored in the <strong>openbmc-ci</strong> project, and we can know the CI build process details by <strong>Jenkinsfile</strong>.</p></li>
+</ul>
+<p><img alt="_images/p01.png" src="_images/p01.png" /></p>
+<p>​                                  Fig1. Schematic diagram of the DSG BMC project structure in gitlab</p>
+<hr class="docutils" />
+<p>##CI Build tool — Jenkins</p>
+<p>​    DSG BMC CI tasks are deployed in <a class="reference external" href="https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/">Jenkins</a>, and Jenkins provides <strong>multi-branch Pipeline</strong> for continuous integration and delivery, as shown in Fig2.  The jobs executing CI build tasks are <strong>dsg-openbmc-ci</strong> and <strong>dsg-openbmc-feature-ci</strong>, which are automatically  triggered by  corresponding trigger job .</p>
+<ul class="simple">
+<li><p>The trigger job corresponding to dsg-openbmc-ci are dsg-openbmc-openbmc and <strong>dsg-openbmc-meta-intel</strong>. And the trigger job corresponding to dsg-openbmc-feature-ci is <strong>xx(features name)-trigger-job</strong>.</p></li>
+</ul>
+<p>Fig2. Schematic diagram of each multibranch pipeline in Jenkins</p>
+<ul>
+<li><p>Take dsg-openbmc-meta-intel as an example, each branch is shown in fig3,</p>
+<img src="C:\Users\wanrongt\AppData\Roaming\Typora\typora-user-images\image-20210730154051188.png" alt="image-20210730154051188" style="zoom: 85%;" /></li>
+</ul>
+<p>Fig3</p>
+<ul class="simple">
+<li><p>Related settings can be seen by clicking <strong>configure</strong>, the <strong>Project Repository</strong> is the corresponding git address, as shown in Fig4</p></li>
+</ul>
+<p>Fig4</p>
+<ul>
+<li><p>The build process is implemented by a <strong>custom pipeline script</strong>, as shown in Fig5. The pipeline also often uses the <strong>Jenkinsfile</strong> to implement build process , and the master branch of openbmc-ci uses Jenkinsfile, as shown in Fig6：</p>
+<img src="C:\Users\wanrongt\AppData\Roaming\Typora\typora-user-images\image-20210730155307486.png" alt="image-20210730155307486" style="zoom:80%;" /></li>
+</ul>
+<p>Fig5</p>
+<p>Fig6</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="build-dsg-bmc-project">
+<h2>Build DSG BMC project<a class="headerlink" href="#build-dsg-bmc-project" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="automatically-trigger-build-tasks-by-jenkins">
+<h2>Automatically trigger build tasks by Jenkins<a class="headerlink" href="#automatically-trigger-build-tasks-by-jenkins" title="Permalink to this headline">¶</a></h2>
+<p>The dsg-openbmc-ci and dsg-openbmc-feature-ci have corresponding automatic trigger mode, and the trigger relationship diagram is shown in Fig7.</p>
+<img src="C:\Users\wanrongt\AppData\Roaming\Typora\typora-user-images\image-20210730160142794.png" alt="image-20210730160142794" style="zoom:80%;" /><p>Fig7</p>
+<ol class="simple">
+<li><p>The two trigger modes of dsg-openbmc-ci:</p></li>
+</ol>
+<ul class="simple">
+<li><p>When a developer pushes code or submits a merge request to the dsg-openbmc-openbmc and dsg-openbmc-meta-intel projects in gitlab, these changes will trigger the corresponding trigger-job in Jenkins, and the trigger-job will call dsg-openbmc-ci to build.</p></li>
+<li><p>The master of openbmc-ci is triggered at 3 o’clock in the morning every day.</p></li>
+</ul>
+<ol class="simple">
+<li><p>The two trigger modes of dsg-openbmc-feature-ci：</p></li>
+</ol>
+<ul class="simple">
+<li><p>When a developer pushes code or submits a merge request to the fetures projects in gitlab, these changes will trigger the corresponding feature_name-trigger-job in Jenkins, and the trigger-job will call dsg-openbmc-ci to build.</p></li>
+<li><p>The dsg-openbmc-feature-ci project will be executed regularly at 10 o’clock every day, and the results will be sent to Chunhui.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="manually-trigger-tasks-by-jenkins">
+<h2>Manually trigger tasks by Jenkins<a class="headerlink" href="#manually-trigger-tasks-by-jenkins" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="demo2.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ruby.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
