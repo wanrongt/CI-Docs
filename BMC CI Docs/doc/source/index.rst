@@ -11,12 +11,9 @@ Welcome to BMC CI documentation!
    :caption: Contents:
 
    demo1
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
    demo2
+   demo4
+
 
 
 Indices and tables
@@ -25,4 +22,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-* :ref:`demo2`
+

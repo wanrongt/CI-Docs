@@ -1,0 +1,86 @@
+# DSG BMC CI Process
+
+##  Code repository — Gitlab
+
+​        [Openbmc]( https://github.com/openbmc/openbmc) is an open source project , and the [DSG BMC ]( https://gitlab.devtools.intel.com/dsg-bmc ) project based on Openbmc is placed in [gitlab](https://gitlab.devtools.intel.com/). We mainly focus on four parts: [dsg-openbmc-openbmc](https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-openbmc),  [dsg-openbmc-meta-intel](https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-meta-intel), [features](https://gitlab.devtools.intel.com/dsg-bmc/features) and [openbmc-ci](https://gitlab.devtools.intel.com/dsg-bmc/openbmc-ci). As shown in Fig1.
+
+-  **Dsg-openbmc-openbmc** is obtained by clone of the **Openbmc** in github.
+
+-  **Dsg-openbmc-meta-intel** is a project where developers create their own branches for feature development. Some git address links,not the actual code, are placed in the dsg-openbmc-meta-intel file. And the project code of features can be pulled by these links.
+-  The project source code is put in the **features** project, and the code is classified in terms of the featrues.
+
+- Some Jenkinsfile are stored in the **openbmc-ci** project, and we can know the CI build process details by **Jenkinsfile**.
+
+![](/Images/p01.png)
+
+​                                  Fig1. Schematic diagram of the DSG BMC project structure in gitlab
+
+***
+
+
+
+##CI Build tool — Jenkins
+
+​    DSG BMC CI tasks are deployed in [Jenkins](https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/ ), and Jenkins provides **multi-branch Pipeline** for continuous integration and delivery, as shown in Fig2.  The jobs executing CI build tasks are **dsg-openbmc-ci** and **dsg-openbmc-feature-ci**, which are automatically  triggered by  corresponding trigger job .
+
+- The trigger job corresponding to dsg-openbmc-ci are dsg-openbmc-openbmc and **dsg-openbmc-meta-intel**. And the trigger job corresponding to dsg-openbmc-feature-ci is **xx(features name)-trigger-job**.
+
+![image-20210730151451869](C:\Users\wanrongt\AppData\Roaming\Typora\typora-user-images\image-20210730151451869.png)
+
+Fig2. Schematic diagram of each multibranch pipeline in Jenkins
+
+* Take dsg-openbmc-meta-intel as an example, each branch is shown in fig3,
+
+  <img src="C:\Users\wanrongt\AppData\Roaming\Typora\typora-user-images\image-20210730154051188.png" alt="image-20210730154051188" style="zoom: 85%;" />
+
+
+
+Fig3
+
+- Related settings can be seen by clicking **configure**, the **Project Repository** is the corresponding git address, as shown in Fig4
+
+![image-20210730154250313](C:\Users\wanrongt\AppData\Roaming\Typora\typora-user-images\image-20210730154250313.png)
+
+Fig4
+
+- The build process is implemented by a **custom pipeline script**, as shown in Fig5. The pipeline also often uses the **Jenkinsfile** to implement build process , and the master branch of openbmc-ci uses Jenkinsfile, as shown in Fig6：
+
+  <img src="C:\Users\wanrongt\AppData\Roaming\Typora\typora-user-images\image-20210730155307486.png" alt="image-20210730155307486" style="zoom:80%;" />
+
+Fig5
+
+![image-20210730155417017](C:\Users\wanrongt\AppData\Roaming\Typora\typora-user-images\image-20210730155417017.png)
+
+Fig6
+
+***
+
+
+
+## Build DSG BMC project
+
+ ##  Automatically trigger build tasks by Jenkins
+
+The dsg-openbmc-ci and dsg-openbmc-feature-ci have corresponding automatic trigger mode, and the trigger relationship diagram is shown in Fig7.
+
+<img src="C:\Users\wanrongt\AppData\Roaming\Typora\typora-user-images\image-20210730160142794.png" alt="image-20210730160142794" style="zoom:80%;" />
+
+Fig7
+
+1. The two trigger modes of dsg-openbmc-ci:
+
+- When a developer pushes code or submits a merge request to the dsg-openbmc-openbmc and dsg-openbmc-meta-intel projects in gitlab, these changes will trigger the corresponding trigger-job in Jenkins, and the trigger-job will call dsg-openbmc-ci to build.
+
+- The master of openbmc-ci is triggered at 3 o'clock in the morning every day.
+
+2. The two trigger modes of dsg-openbmc-feature-ci：
+
+- When a developer pushes code or submits a merge request to the fetures projects in gitlab, these changes will trigger the corresponding feature_name-trigger-job in Jenkins, and the trigger-job will call dsg-openbmc-ci to build.
+
+-  The dsg-openbmc-feature-ci project will be executed regularly at 10 o'clock every day, and the results will be sent to Chunhui.
+
+  ***
+
+
+
+## Manually trigger tasks by Jenkins
