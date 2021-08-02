@@ -10,8 +10,6 @@ Welcome to BMC CI documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   demo1
-   demo2
    demo4
 
 
