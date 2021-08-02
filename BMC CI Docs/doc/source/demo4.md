@@ -79,17 +79,16 @@ Fig7
 
 ![](/Images/08.png)
 Fig8
+### Step1: Click the ‘Build with Parameters
 
-###Step1: Click the ‘Build with Parameters
-
-###Step2: Select the feature branch to be built in the Feature drop-down box, and fill in the branch name
+### Step2: Select the feature branch to be built in the Feature drop-down box, and fill in the branch name
 
 ### Step3: Click the Build button to start the task
 
 ![](/Images/p09.png)
 ## Build manually by command in the MobaXterm
 
-###step1: Set user permission 
+### step1: Set user permission 
 
 - Create a user account (take jenkins as an example )
 

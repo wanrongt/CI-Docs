@@ -93,10 +93,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#build-dsg-bmc-project">Build DSG BMC project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#trigger-automatically-build-tasks-by-jenkins">Trigger automatically build tasks by Jenkins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#trigger-manually-tasks-by-jenkins">Trigger manually tasks by Jenkins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step1-click-the-build-with-parameters">Step1: Click the ‘Build with Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step2-select-the-feature-branch-to-be-built-in-the-feature-drop-down-box-and-fill-in-the-branch-name">Step2: Select the feature branch to be built in the Feature drop-down box, and fill in the branch name</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step3-click-the-build-button-to-start-the-task">Step3: Click the Build button to start the task</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#build-manually-by-command-in-the-mobaxterm">Build manually by command in the MobaXterm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step1-set-user-permission">step1: Set user permission</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step2-set-up-agent">Step2:Set up agent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step3-installation-tools">Step3: Installation tools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step4-set-up-git-agent">Step4: Set up git agent</a></li>
@@ -244,8 +247,12 @@ Fig7</p>
 <p>​    Take dsg-openbmc-feature-ci job as an example, click to select the master branch,</p>
 <p><img alt="_images/08.png" src="_images/08.png" />
 Fig8</p>
-<p>###Step1: Click the ‘Build with Parameters</p>
-<p>###Step2: Select the feature branch to be built in the Feature drop-down box, and fill in the branch name</p>
+<div class="section" id="step1-click-the-build-with-parameters">
+<h3>Step1: Click the ‘Build with Parameters<a class="headerlink" href="#step1-click-the-build-with-parameters" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="step2-select-the-feature-branch-to-be-built-in-the-feature-drop-down-box-and-fill-in-the-branch-name">
+<h3>Step2: Select the feature branch to be built in the Feature drop-down box, and fill in the branch name<a class="headerlink" href="#step2-select-the-feature-branch-to-be-built-in-the-feature-drop-down-box-and-fill-in-the-branch-name" title="Permalink to this headline">¶</a></h3>
+</div>
 <div class="section" id="step3-click-the-build-button-to-start-the-task">
 <h3>Step3: Click the Build button to start the task<a class="headerlink" href="#step3-click-the-build-button-to-start-the-task" title="Permalink to this headline">¶</a></h3>
 <p><img alt="_images/p09.png" src="_images/p09.png" /></p>
@@ -253,7 +260,8 @@ Fig8</p>
 </div>
 <div class="section" id="build-manually-by-command-in-the-mobaxterm">
 <h2>Build manually by command in the MobaXterm<a class="headerlink" href="#build-manually-by-command-in-the-mobaxterm" title="Permalink to this headline">¶</a></h2>
-<p>###step1: Set user permission</p>
+<div class="section" id="step1-set-user-permission">
+<h3>step1: Set user permission<a class="headerlink" href="#step1-set-user-permission" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Create a user account (take jenkins as an example )</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">useradd</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;/home/jenkins&quot;</span> <span class="o">-</span><span class="n">m</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;/bin/bash&quot;</span> <span class="n">jenkins</span>
@@ -279,6 +287,7 @@ Fig8</p>
 </div>
 </li>
 </ul>
+</div>
 <div class="section" id="step2-set-up-agent">
 <h3>Step2:Set up agent<a class="headerlink" href="#step2-set-up-agent" title="Permalink to this headline">¶</a></h3>
 <ul>
