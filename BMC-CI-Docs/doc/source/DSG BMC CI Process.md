@@ -1,4 +1,4 @@
-# DSG BMC CI Process
+# DSG BMC CI Process docs
 
 ##  Code repository — Gitlab
 
