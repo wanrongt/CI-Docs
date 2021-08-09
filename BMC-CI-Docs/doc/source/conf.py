@@ -22,7 +22,7 @@ source_suffix = ['.rst', '.md']
 
 # -- Project information -----------------------------------------------------
 
-project = 'BMC CI'
+project = 'DSG SSW CI and Automation'
 copyright = '2021, Ruby'
 author = 'Ruby'
 

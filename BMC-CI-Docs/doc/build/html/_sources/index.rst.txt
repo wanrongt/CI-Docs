@@ -1,23 +1,16 @@
-.. BMC CI Docs documentation master file, created by
-   sphinx-quickstart on Thu Jul 29 14:05:17 2021.
+.. DSG SSW DOCS documentation master file, created by
+   sphinx-quickstart on Wed Aug  4 16:15:17 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to DSG SSW Continous Integartion and Automation  documentation!
-=======================================
+
+Welcome to DSG SSW CI and Automation Process documentation!
+==============================================================================
 
 .. toctree::
    :maxdepth: 3
-   :caption: Contents:
+   :caption: Getting Started:
 
-   demo4
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   On-Board/index
+   DSG-SSW-Continous-Integartion/index
+   DSG Automation/index
