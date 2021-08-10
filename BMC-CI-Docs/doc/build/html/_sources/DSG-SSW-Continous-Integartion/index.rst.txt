@@ -12,4 +12,4 @@ DSG SSW Continuous Integration
 
    SSW-BIOS-BMC-build-and-release-process/index
    BIOS-CI/index
-   BMC CI/index
+   BMC-CI/index

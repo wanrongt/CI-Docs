@@ -3,13 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-DSG SSW Continuous Integration
-================================================
-
+On-Board
+======================================
 
 .. toctree::
    :maxdepth: 2
+   :caption: Contents:
 
-   SSW-BIOS-BMC-build-and-release-process/index
-   BIOS-CI/index
-   BMC-CI/index
+   Getting access
+   Getting guide documents

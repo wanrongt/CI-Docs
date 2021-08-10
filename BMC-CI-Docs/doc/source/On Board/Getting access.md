@@ -1,5 +1,5 @@
-Getting Access
-======================================
+#Getting Access
+
 ## Submit requests at [AGS](https://ags.intel.com/identityiq/home.jsf)
 
 * **BDBA:**

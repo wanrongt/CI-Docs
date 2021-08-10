@@ -11,6 +11,6 @@ Welcome to DSG SSW CI and Automation Process documentation!
    :maxdepth: 3
    :caption: Getting Started:
 
-   On-Board/index
+   On Board/index
    DSG-SSW-Continous-Integartion/index
    DSG Automation/index

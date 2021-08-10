@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>DSG BMC CI Process &mdash; DSG SSW CI and Automation 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DSG SSW Automation" href="../../DSG%20Automation/index.html" />
+    <link rel="prev" title="BMC CI" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DSG SSW CI and Automation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../On%20Board/index.html">On-Board</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">DSG SSW Continuous Integration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../SSW-BIOS-BMC-build-and-release-process/index.html">Build and release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BIOS-CI/index.html">BIOS CI</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">BMC CI</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DSG BMC CI Process</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#code-repository-gitlab">Code repository — Gitlab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ci-build-tool-jenkins">CI Build tool — Jenkins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-dsg-bmc-project">Build DSG BMC project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trigger-automatically-build-tasks-by-jenkins">Trigger automatically build tasks by Jenkins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trigger-manually-tasks-by-jenkins">Trigger manually tasks by Jenkins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-manually-by-command-in-the-mobaxterm">Build manually by command in the MobaXterm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#view-the-build-result">View the build result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-the-image">Find  the image</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../DSG%20Automation/index.html">DSG SSW Automation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">DSG SSW CI and Automation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">DSG SSW Continuous Integration</a> &raquo;</li>
+        
+          <li><a href="index.html">BMC CI</a> &raquo;</li>
+        
+      <li>DSG BMC CI Process</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/DSG-SSW-Continous-Integartion/BMC-CI/DSG BMC CI Process.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dsg-bmc-ci-process">
+<h1>DSG BMC CI Process<a class="headerlink" href="#dsg-bmc-ci-process" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="code-repository-gitlab">
+<h2>Code repository — Gitlab<a class="headerlink" href="#code-repository-gitlab" title="Permalink to this headline">¶</a></h2>
+<p>​        <a class="reference external" href="https://github.com/openbmc/openbmc">Openbmc</a> is an open source project , and the <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc">DSG BMC </a> project based on Openbmc is placed in <a class="reference external" href="https://gitlab.devtools.intel.com/">gitlab</a>. We mainly focus on four parts: <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-openbmc">dsg-openbmc-openbmc</a>,  <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-meta-intel">dsg-openbmc-meta-intel</a>, <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/features">features</a> and <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/openbmc-ci">openbmc-ci</a>. As shown in Fig1.</p>
+<ul class="simple">
+<li><p><strong>Dsg-openbmc-openbmc</strong> is obtained by clone of the <strong>Openbmc</strong> in github.</p></li>
+<li><p><strong>Dsg-openbmc-meta-intel</strong> is a project where developers create their own branches for feature development. Some git address links,not the actual code, are placed in the dsg-openbmc-meta-intel file. And the project code of features can be pulled by these links.</p></li>
+<li><p>The project source code is put in the <strong>features</strong> project, and the code is classified in terms of the featrues.</p></li>
+<li><p>Some Jenkinsfile are stored in the <strong>openbmc-ci</strong> project, and we can know the CI build process details by <strong>Jenkinsfile</strong>.</p></li>
+</ul>
+<p><img alt="../../_images/p01.png" src="../../_images/p01.png" /></p>
+<p>​                                  Fig1. Schematic diagram of the DSG BMC project structure in gitlab</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="ci-build-tool-jenkins">
+<h2>CI Build tool — Jenkins<a class="headerlink" href="#ci-build-tool-jenkins" title="Permalink to this headline">¶</a></h2>
+<p>​    DSG BMC CI tasks are deployed in <a class="reference external" href="https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/">Jenkins</a>, and Jenkins provides <strong>multi-branch Pipeline</strong> for continuous integration and delivery, as shown in Fig2.  The jobs executing CI build tasks are <strong>dsg-openbmc-ci</strong> and <strong>dsg-openbmc-feature-ci</strong>, which are automatically  triggered by  corresponding trigger job .</p>
+<ul class="simple">
+<li><p>The trigger job corresponding to dsg-openbmc-ci are dsg-openbmc-openbmc and <strong>dsg-openbmc-meta-intel</strong>. And the trigger job corresponding to dsg-openbmc-feature-ci is <strong>xx(features name)-trigger-job</strong>.
+<img alt="../../_images/p02.png" src="../../_images/p02.png" />
+Fig2. Schematic diagram of each multibranch pipeline in Jenkins</p></li>
+</ul>
+<ul class="simple">
+<li><p>Take dsg-openbmc-meta-intel as an example, each branch is shown in fig3,
+<img alt="../../_images/p03.png" src="../../_images/p03.png" /></p></li>
+</ul>
+<p>Fig3</p>
+<ul class="simple">
+<li><p>Related settings can be seen by clicking <strong>configure</strong>, the <strong>Project Repository</strong> is the corresponding git address, as shown in Fig4
+<img alt="../../_images/p04.png" src="../../_images/p04.png" /></p></li>
+</ul>
+<p>Fig4</p>
+<ul class="simple">
+<li><p>The build process is implemented by a <strong>custom pipeline script</strong>, as shown in Fig5. The pipeline also often uses the <strong>Jenkinsfile</strong> to implement build process , and the master branch of openbmc-ci uses Jenkinsfile, as shown in Fig6：</p></li>
+</ul>
+<p><img alt="../../_images/p06.png" src="../../_images/p06.png" />
+Fig5
+<img alt="../../_images/p05.png" src="../../_images/p05.png" /></p>
+<p>Fig6</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="build-dsg-bmc-project">
+<h2>Build DSG BMC project<a class="headerlink" href="#build-dsg-bmc-project" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="trigger-automatically-build-tasks-by-jenkins">
+<h2>Trigger automatically build tasks by Jenkins<a class="headerlink" href="#trigger-automatically-build-tasks-by-jenkins" title="Permalink to this headline">¶</a></h2>
+<p>The dsg-openbmc-ci and dsg-openbmc-feature-ci have corresponding automatic trigger mode, and the trigger relationship diagram is shown in Fig7.</p>
+<p><img alt="../../_images/p07.png" src="../../_images/p07.png" />
+Fig7</p>
+<ol class="simple">
+<li><p>The two trigger modes of dsg-openbmc-ci:</p></li>
+</ol>
+<ul class="simple">
+<li><p>When a developer pushes code or submits a merge request to the dsg-openbmc-openbmc and dsg-openbmc-meta-intel projects in gitlab, these changes will trigger the corresponding trigger-job in Jenkins, and the trigger-job will call dsg-openbmc-ci to build.</p></li>
+<li><p>The master of openbmc-ci is triggered at 3 o’clock in the morning every day.</p></li>
+</ul>
+<ol class="simple">
+<li><p>The two trigger modes of dsg-openbmc-feature-ci：</p></li>
+</ol>
+<ul class="simple">
+<li><p>When a developer pushes code or submits a merge request to the fetures projects in gitlab, these changes will trigger the corresponding feature_name-trigger-job in Jenkins, and the trigger-job will call dsg-openbmc-ci to build.</p></li>
+<li><p>The dsg-openbmc-feature-ci project will be executed regularly at 10 o’clock every day, and the results will be sent to Chunhui.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="trigger-manually-tasks-by-jenkins">
+<h2>Trigger manually tasks by Jenkins<a class="headerlink" href="#trigger-manually-tasks-by-jenkins" title="Permalink to this headline">¶</a></h2>
+<p>​    Take dsg-openbmc-feature-ci job as an example, click to select the master branch,</p>
+<p><img alt="../../_images/08.png" src="../../_images/08.png" />
+Fig8</p>
+<div class="section" id="step1-click-the-build-with-parameters">
+<h3>Step1: Click the ‘Build with Parameters<a class="headerlink" href="#step1-click-the-build-with-parameters" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="step2-select-the-feature-branch-to-be-built-in-the-feature-drop-down-box-and-fill-in-the-branch-name">
+<h3>Step2: Select the feature branch to be built in the Feature drop-down box, and fill in the branch name<a class="headerlink" href="#step2-select-the-feature-branch-to-be-built-in-the-feature-drop-down-box-and-fill-in-the-branch-name" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="step3-click-the-build-button-to-start-the-task">
+<h3>Step3: Click the Build button to start the task<a class="headerlink" href="#step3-click-the-build-button-to-start-the-task" title="Permalink to this headline">¶</a></h3>
+<p><img alt="../../_images/p09.png" src="../../_images/p09.png" /></p>
+</div>
+</div>
+<div class="section" id="build-manually-by-command-in-the-mobaxterm">
+<h2>Build manually by command in the MobaXterm<a class="headerlink" href="#build-manually-by-command-in-the-mobaxterm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step1-set-user-permission">
+<h3>step1: Set user permission<a class="headerlink" href="#step1-set-user-permission" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Create a user account (take jenkins as an example )</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">useradd</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;/home/jenkins&quot;</span> <span class="o">-</span><span class="n">m</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;/bin/bash&quot;</span> <span class="n">jenkins</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<ul>
+<li><p>Set user password</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">passwd</span> <span class="n">jenkins</span>
+</pre></div>
+</div>
+</li>
+<li><p>Set jenkins user sudo free password</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pkexec</span> <span class="n">visudo</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add the following two lines, press Ctrl+o to save, Ctrl+x to exit:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jenkins</span> <span class="n">ALL</span><span class="o">=</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span> <span class="n">ALL</span>
+<span class="n">jenkins</span> <span class="n">ALL</span><span class="o">=</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span> <span class="n">NOPASSWD</span><span class="p">:</span><span class="n">ALL</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="step2-set-up-agent">
+<h3>Step2:Set up agent<a class="headerlink" href="#step2-set-up-agent" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Set up system agent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">environment</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add two lines to save：</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">http_proxy</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">child</span><span class="o">-</span><span class="n">prc</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">913</span>
+<span class="n">export</span> <span class="n">https_proxy</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">child</span><span class="o">-</span><span class="n">prc</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">913</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Set up apt agent：</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">apt</span><span class="o">.</span><span class="n">conf</span>
+
+\<span class="c1">## Add three lines to save：</span>
+
+<span class="n">Acquire</span><span class="p">::</span><span class="n">http</span><span class="p">::</span><span class="n">Proxy</span> <span class="s2">&quot;http://child-prc.intel.com:913&quot;</span><span class="p">;</span>
+
+<span class="n">Acquire</span><span class="p">::</span><span class="n">ftp</span><span class="p">::</span><span class="n">proxy</span> <span class="s2">&quot;http://child-prc.intel.com:913&quot;</span><span class="p">;</span>
+
+<span class="n">Acquire</span><span class="p">::</span><span class="n">https</span><span class="p">::</span><span class="n">proxy</span> <span class="s2">&quot;http://child-prc.intel.com:913&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step3-installation-tools">
+<h3>Step3: Installation tools<a class="headerlink" href="#step3-installation-tools" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">update</span> <span class="o">--</span><span class="n">fix</span><span class="o">-</span><span class="n">missing</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">recommends</span> <span class="n">apt</span><span class="o">-</span><span class="n">utils</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">cmake</span> <span class="n">git</span> <span class="n">lib32tinfo6</span> <span class="n">libicu</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">][</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span> <span class="n">lsb</span><span class="o">-</span><span class="n">release</span> <span class="n">net</span><span class="o">-</span><span class="n">tools</span> <span class="n">ninja</span><span class="o">-</span><span class="n">build</span> <span class="n">openjdk</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">jdk</span> <span class="n">make</span> <span class="n">p7zip</span><span class="o">-</span><span class="n">full</span> <span class="n">procps</span> <span class="n">python3</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span> <span class="n">wget</span> <span class="n">curl</span> <span class="n">rsync</span> <span class="n">iputils</span><span class="o">-</span><span class="n">ping</span> <span class="n">chrpath</span> <span class="n">texinfo</span> <span class="n">cpio</span> <span class="n">diffstat</span> <span class="n">gawk</span> <span class="n">locales</span> <span class="o">--</span><span class="n">fix</span><span class="o">-</span><span class="n">missing</span> <span class="o">&amp;&amp;</span> <span class="n">DEBIAN_FRONTEND</span><span class="o">=</span><span class="n">noninteractive</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">g</span><span class="o">++</span> <span class="n">libkrb5</span><span class="o">-</span><span class="n">dev</span> <span class="n">krb5</span><span class="o">-</span><span class="n">user</span> <span class="n">uuid</span><span class="o">-</span><span class="n">dev</span> <span class="n">libudev</span><span class="o">-</span><span class="n">dev</span> <span class="n">libc6</span><span class="o">-</span><span class="n">dev</span> <span class="n">libstdc</span><span class="o">++</span><span class="mi">6</span> <span class="n">libstdc</span><span class="o">++-</span><span class="mi">10</span><span class="o">-</span><span class="n">dev</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">sqlite</span> <span class="n">libsqlite3</span><span class="o">-</span><span class="n">dev</span> <span class="n">libpcap</span><span class="o">-</span><span class="n">dev</span> <span class="n">libssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libsystemd</span><span class="o">-</span><span class="n">dev</span> <span class="n">patchelf</span> <span class="nb">zip</span> <span class="n">unzip</span> <span class="n">vim</span> <span class="n">dos2unix</span> <span class="n">linux</span><span class="o">-</span><span class="n">headers</span><span class="o">-</span><span class="n">generic</span> <span class="n">libelf</span><span class="o">-</span><span class="n">dev</span> <span class="n">tree</span> <span class="n">sudo</span> <span class="n">md5deep</span> <span class="n">mlocate</span> <span class="o">&amp;&amp;</span> <span class="n">updatedb</span> <span class="o">&amp;&amp;</span> <span class="n">locale</span><span class="o">-</span><span class="n">gen</span> <span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">&amp;&amp;</span> <span class="n">update</span><span class="o">-</span><span class="n">locale</span> <span class="o">&amp;&amp;</span> <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">packages</span><span class="o">.</span><span class="n">microsoft</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="mf">18.04</span><span class="o">/</span><span class="n">packages</span><span class="o">-</span><span class="n">microsoft</span><span class="o">-</span><span class="n">prod</span><span class="o">.</span><span class="n">deb</span> <span class="o">-</span><span class="n">O</span> <span class="n">packages</span><span class="o">-</span><span class="n">microsoft</span><span class="o">-</span><span class="n">prod</span><span class="o">.</span><span class="n">deb</span> <span class="o">&amp;&amp;</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">packages</span><span class="o">-</span><span class="n">microsoft</span><span class="o">-</span><span class="n">prod</span><span class="o">.</span><span class="n">deb</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">update</span> <span class="o">--</span><span class="n">fix</span><span class="o">-</span><span class="n">missing</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">apt</span><span class="o">-</span><span class="n">transport</span><span class="o">-</span><span class="n">https</span> <span class="n">dotnet</span><span class="o">-</span><span class="n">sdk</span><span class="o">-</span><span class="mf">3.1</span> <span class="o">&amp;&amp;</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">setuptools</span> <span class="n">pip</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">autoremove</span> <span class="o">-</span><span class="n">y</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">clean</span> <span class="o">-</span><span class="n">y</span> <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">lists</span><span class="o">/*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step4-set-up-git-agent">
+<h3>Step4: Set up git agent<a class="headerlink" href="#step4-set-up-git-agent" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">http</span><span class="o">.</span><span class="n">proxy</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">child</span><span class="o">-</span><span class="n">prc</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">913</span>
+
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">https</span><span class="o">.</span><span class="n">proxy</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">child</span><span class="o">-</span><span class="n">prc</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">913</span>
+
+<span class="n">git</span> <span class="n">config</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step5-create-a-gitlab-secret-key">
+<h3>Step5: Create a gitlab secret key<a class="headerlink" href="#step5-create-a-gitlab-secret-key" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Create key</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">C</span> <span class="s2">&quot; Email Address &quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Copy the public key to gitlab</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open gitlab, paste the public key in ‘setting-&gt;SSH keys’ and save</p></li>
+</ul>
+<p><img alt="../../_images/p11.png" src="../../_images/p11.png" /></p>
+<ul class="simple">
+<li><p>SSH login without confirmation configuration (*Required, otherwise the feature code will not be pulled when building)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">config</span>
+
+<span class="n">Host</span> <span class="o">*</span>
+
+	<span class="n">StrictHostKeyChecking</span> <span class="n">no</span>
+
+	<span class="n">UserKnownHostsFile</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step6-build-image">
+<h3>Step6:Build image<a class="headerlink" href="#step6-build-image" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>clone code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
+
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gitlab</span><span class="o">.</span><span class="n">devtools</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dsg</span><span class="o">-</span><span class="n">bmc</span><span class="o">/</span><span class="n">dsg</span><span class="o">-</span><span class="n">openbmc</span><span class="o">-</span><span class="n">openbmc</span><span class="o">.</span><span class="n">git</span>
+
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gitlab</span><span class="o">.</span><span class="n">devtools</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dsg</span><span class="o">-</span><span class="n">bmc</span><span class="o">/</span><span class="n">dsg</span><span class="o">-</span><span class="n">openbmc</span><span class="o">-</span><span class="n">meta</span><span class="o">-</span><span class="n">intel</span><span class="o">.</span><span class="n">git</span>
+
+<span class="n">mv</span> <span class="n">dsg</span><span class="o">-</span><span class="n">openbmc</span><span class="o">-</span><span class="n">openbmc</span> <span class="n">openbmc</span>
+
+<span class="n">mv</span> <span class="n">dsg</span><span class="o">-</span><span class="n">openbmc</span><span class="o">-</span><span class="n">meta</span><span class="o">-</span><span class="n">intel</span> <span class="n">openbmc</span><span class="o">/</span><span class="n">openbmc</span><span class="o">-</span><span class="n">meta</span><span class="o">-</span><span class="n">intel</span>
+</pre></div>
+</div>
+</li>
+<li><p>create workspace</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jenkins</span><span class="o">/</span><span class="n">openbmc</span><span class="o">/</span>
+
+<span class="n">export</span> <span class="n">TEMPLATECONF</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">jenkins</span><span class="o">/</span><span class="n">openbmc</span><span class="o">/</span><span class="n">openbmc</span><span class="o">-</span><span class="n">meta</span><span class="o">-</span><span class="n">intel</span><span class="o">/</span><span class="n">meta</span><span class="o">-</span><span class="n">egs</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span>
+
+<span class="n">source</span> <span class="n">oe</span><span class="o">-</span><span class="n">init</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">env</span>
+</pre></div>
+</div>
+</li>
+<li><p>Modify the thread to speed up the build</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>vim ~/jenkins/openbmc/build/conf/local.conf
+ 
+#Add the following two lines：
+
+BB_NUMBER_THREADS ?= &quot;16&quot;
+
+PARALLEL_MAKE ?= &quot;-j16&quot;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>build command</strong>，Remember to clear the openbmc/build/download folder cache before each build and execute the build command</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">jenkins</span><span class="o">/</span><span class="n">openbmc</span><span class="o">/</span><span class="n">build</span>
+
+<span class="n">time</span> <span class="n">bitbake</span> <span class="n">intel</span><span class="o">-</span><span class="n">platforms</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>After the build is successful, the image is placed under the path: ~/openbmc/build/tmp/deploy/images/intel-ast2600/pfr_images</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="view-the-build-result">
+<h2>View the build result<a class="headerlink" href="#view-the-build-result" title="Permalink to this headline">¶</a></h2>
+<p>①   Take dsg-openbmc-ci as an example, you can see the build result on the branch interface, green dot means success, red dot means failure</p>
+<p><img alt="../../_images/p12.png" src="../../_images/p12.png" /></p>
+<p>②  Select the master branch, you can see the build history and the operation of each stage, and select the most recent running process in the build history
+<img alt="../../_images/p13.png" src="../../_images/p13.png" /></p>
+<p>③  Click ‘Open Blue Ocean’ icon to see the detailed process of the build, click the icon in the lower right corner to see the log
+<img alt="../../_images/p15.png" src="../../_images/p15.png" /></p>
+<p>④  If the build fails, analyzethe reason from the log
+<img alt="../../_images/p14.png" src="../../_images/p14.png" /></p>
+</div>
+<div class="section" id="find-the-image">
+<h2>Find  the image<a class="headerlink" href="#find-the-image" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step1-select-a-certain-submission-of-dag-openbmc-meta-intel-branch-in-the-gitlab-such-as-move-dc-power-on-off-log-to-currrentpowerstatemonitor-committed-by-rao-xinglong">
+<h3>Step1:Select a certain submission of dag-openbmc-meta-intel branch in the gitlab, such as Move DC power on/off log to currrentPowerStateMonitor Committed by <strong><a class="reference external" href="https://gitlab.devtools.intel.com/raoxingl">Rao, Xinglong</a></strong><a class="headerlink" href="#step1-select-a-certain-submission-of-dag-openbmc-meta-intel-branch-in-the-gitlab-such-as-move-dc-power-on-off-log-to-currrentpowerstatemonitor-committed-by-rao-xinglong" title="Permalink to this headline">¶</a></h3>
+<p><img alt="../../_images/p16.png" src="../../_images/p16.png" /></p>
+</div>
+<div class="section" id="step2-click-the-address-behind-the-pipeline-5287140">
+<h3>Step2: Click the address behind the pipeline:  #5287140<a class="headerlink" href="#step2-click-the-address-behind-the-pipeline-5287140" title="Permalink to this headline">¶</a></h3>
+<p><img alt="../../_images/p17.png" src="../../_images/p17.png" /></p>
+</div>
+<div class="section" id="step3-click-on-the-buildci-icon">
+<h3>Step3:Click on the ‘buildci’ icon<a class="headerlink" href="#step3-click-on-the-buildci-icon" title="Permalink to this headline">¶</a></h3>
+<p><img alt="../../_images/p18.png" src="../../_images/p18.png" /></p>
+</div>
+<div class="section" id="step4-open-the-website-search-in-the-picture-and-find-the-corresponding-zip-file-to-download">
+<h3>Step4:Open the website search in the picture and find the corresponding zip file to download<a class="headerlink" href="#step4-open-the-website-search-in-the-picture-and-find-the-corresponding-zip-file-to-download" title="Permalink to this headline">¶</a></h3>
+<p><img alt="../../_images/p19.png" src="../../_images/p19.png" />
+<img alt="../../_images/p20.png" src="../../_images/p20.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../DSG%20Automation/index.html" class="btn btn-neutral float-right" title="DSG SSW Automation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="BMC CI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ruby.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -248,10 +248,13 @@ time bitbake intel-platforms
 ①   Take dsg-openbmc-ci as an example, you can see the build result on the branch interface, green dot means success, red dot means failure
 
 ![](Images/p12.png)
+
 ②  Select the master branch, you can see the build history and the operation of each stage, and select the most recent running process in the build history
 ![](Images/p13.png)
+
 ③  Click ‘Open Blue Ocean’ icon to see the detailed process of the build, click the icon in the lower right corner to see the log
 ![](Images/p15.png)
+
 ④  If the build fails, analyzethe reason from the log
 ![](Images/p14.png)
 
