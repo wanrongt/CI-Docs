@@ -10,3 +10,4 @@ DSG SSW Automation
    :maxdepth: 2
    :caption: Contents:
 
+   test
