@@ -10,7 +10,7 @@ BIOS CI
    :maxdepth: 2
    :caption: Contents:
 
-   Material_preparation
+   1 Material_preparation
    2 Configuration_file
    3 Daily_settings
    4 BDBA_scan
