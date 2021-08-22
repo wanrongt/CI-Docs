@@ -192,7 +192,7 @@ Host *
 
 ### Step6:Build image
 
-* clone code
+* Clone code
 
   ```python
   cd ~
