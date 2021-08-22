@@ -9,7 +9,7 @@
 -  **Dsg-openbmc-meta-intel** is a project where developers create their own branches for feature development. Some git address links,not the actual code, are placed in the dsg-openbmc-meta-intel file. And the project code of features can be pulled by these links.
 -  The project source code is put in the **features** project, and the code is classified in terms of the featrues.
 
-- Some Jenkinsfile are stored in the **openbmc-ci** project, and we can know the CI build process details by **Jenkinsfile**.
+- Some Jenkinsfiles are stored in the **openbmc-ci** project, and we can know the CI build process details by **Jenkinsfile**.
 
 ![](./Images/p01.png)
 
