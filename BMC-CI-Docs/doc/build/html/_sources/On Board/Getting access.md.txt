@@ -21,14 +21,6 @@
   DevTools - JIRA - Comanche Ridge - User
   ```
 
-- **BDBA:**
-
-  1.This entitlement grants access to BDBA IFWI and UEFI  scan reports
-
-  ```
-  DevTools - Binary Analysis - IAGS_SSP_Firmware on AD-CORP
-  ```
-
 - **UEFI:**
 
   ```
@@ -86,6 +78,14 @@
      DSG OpenBMC FW Admin on AZAD-CORP
      ```
 
+### (3)Scan reports
+- **BDBA:**
+
+  1.This entitlement grants access to BDBA IFWI and UEFI  scan reports
+
+  ```
+  DevTools - Binary Analysis - IAGS_SSP_Firmware on AD-CORP
+  ```
 * **Klocwork** :
 
   1.This entitlement grants access to OPENBMC related Klocwork reports.
