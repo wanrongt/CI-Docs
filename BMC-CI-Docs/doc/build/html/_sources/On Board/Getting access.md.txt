@@ -43,16 +43,6 @@
    DevTools - OWR Artifactory - Viewer
   ```
 
-- **Gitlab**:
-
-  1.This entitlement grants access to GitLab.
-
-  ```
-  GitLab Users - IT supported GitLab instance    
-  ```
-
-  
-
 - **Github** :
 1. Get access to the Intel Innersource and Sandbox GitHub organizations.
 
