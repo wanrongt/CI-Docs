@@ -77,3 +77,27 @@ Two types of html test report are supported:
 
 - self-contained HTML file:  sstf_test.html
 - allure: Type command `allure_path serve allure_report`
+
+# SSTF Development Guide
+
+## SSTF Developement flow introduction  
+SSTF uses simplified ["GitHub Flow"](https://githubflow.github.io/). We don't folk. Github Flow is not perfect, but it's good enough for SSTF project now. 
+1. Anything in the master branch is deployable.
+2. To work on something new, create a descriptively named branch off of master (ie: dev_github_branch)
+   ```
+   git checkout -b dev_github_branch
+   ```
+3. Commit to that branch locally and regularly push your work to the same named branch on the server. For the 1st time push, you may need to set upstream using below command
+   ```
+   git push --set-upstream origin github_flow
+   ```
+4. When you need feedback or help, or you think the branch is ready for merging, open a pull request. Please add the test job link in your PR Comments.  
+5. After someone else has reviewed and signed off on the feature, you can merge it into master 
+6. Once it is merged and pushed to 'master', you can and should deploy immediately
+7. Delete your own develop branch. 
+
+
+## New Jenkins job slave setup notes
+
+
+## Debug Job usage guide.
