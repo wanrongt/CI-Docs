@@ -6,7 +6,7 @@
 
 - **Teamcity:**
 
-  1.Get access to TeamCity
+  1.Get access to teamCity
 
   ```
   DevTools - TeamCity - BinaryAnalysis - UBIT-TC-JF - Project Developer
