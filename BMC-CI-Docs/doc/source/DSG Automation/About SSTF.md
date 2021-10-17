@@ -80,7 +80,7 @@ Two types of html test report are supported:
 
 # SSTF Development Guide
 
-## SSTF Developement workflow introduction  
+## SSTF Development workflow introduction  
 SSTF uses ["GitHub Flow"](https://guides.github.com/introduction/flow/). Github Flow is not perfect, but it's good enough for SSTF project now.
 ![](./Images/githubFlow.png)
 1. Anything in the master branch is deployable.
@@ -106,7 +106,7 @@ SSTF uses ["GitHub Flow"](https://guides.github.com/introduction/flow/). Github 
 2. Install Allure
 3. Set environment variable "STU_Config". "SUT_Config" is the path where your local settings.py is.
 
-## Developement Jenkins Job usage guide.
+## Development Jenkins Job usage guide.
 1. repoPath: This parameter defines the absolute path of your repository on SSTF host
 2. devBranch: This parameter defines which branch to test in this job. 
 3. casePath: This parameter defines the relative path of SSTF. 
