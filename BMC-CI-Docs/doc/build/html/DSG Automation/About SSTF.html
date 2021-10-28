@@ -102,6 +102,12 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#sstf-development-guide">SSTF Development Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sstf-development-workflow-introduction">SSTF Development workflow introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-jenkins-job-slave-setup-notes">New Jenkins job slave setup notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development-jenkins-job-usage-guide">Development Jenkins Job usage guide.</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -257,6 +263,54 @@
 <li><p>allure: Type command <code class="docutils literal notranslate"><span class="pre">allure_path</span> <span class="pre">serve</span> <span class="pre">allure_report</span></code></p></li>
 </ul>
 </div>
+</div>
+</div>
+<div class="section" id="sstf-development-guide">
+<h1>SSTF Development Guide<a class="headerlink" href="#sstf-development-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sstf-development-workflow-introduction">
+<h2>SSTF Development workflow introduction<a class="headerlink" href="#sstf-development-workflow-introduction" title="Permalink to this headline">¶</a></h2>
+<p>SSTF uses <a class="reference external" href="https://guides.github.com/introduction/flow/">“GitHub Flow”</a>. Github Flow is not perfect, but it’s good enough for SSTF project now.
+<img alt="../_images/githubFlow.png" src="../_images/githubFlow.png" /></p>
+<ol>
+<li><p>Anything in the master branch is deployable.</p></li>
+<li><p>To work on something new, create a descriptively named branch off of master (ie: dev_github_branch)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">dev_github_branch</span>
+</pre></div>
+</div>
+</li>
+<li><p>Commit to that branch locally and regularly push your work to the same named branch on the server. For the 1st time push, you may need to set upstream using below command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">github_flow</span>
+</pre></div>
+</div>
+</li>
+<li><p>Once you think your development is done, run a test on your own development jenkins job.</p></li>
+<li><p>After the test in step 4 passed, and you think the branch is ready for merging, open a pull request.</p></li>
+<li><p>After someone else has reviewed and signed off on the feature, you can merge it into master.</p></li>
+<li><p>Once it is merged and pushed to ‘master’, you can and should deploy immediately.</p></li>
+<li><p>Clean your own develop branch.</p></li>
+</ol>
+</div>
+<div class="section" id="new-jenkins-job-slave-setup-notes">
+<h2>New Jenkins job slave setup notes<a class="headerlink" href="#new-jenkins-job-slave-setup-notes" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Setup python environment.</p>
+<ol class="simple">
+<li><p>install python interpreter.</p></li>
+<li><p>install SSTF requirements.</p></li>
+</ol>
+</li>
+<li><p>Install Allure</p></li>
+<li><p>Set environment variable “STU_Config”. “SUT_Config” is the path where your local settings.py is.</p></li>
+</ol>
+</div>
+<div class="section" id="development-jenkins-job-usage-guide">
+<h2>Development Jenkins Job usage guide.<a class="headerlink" href="#development-jenkins-job-usage-guide" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>repoPath: This parameter defines the absolute path of your repository on SSTF host</p></li>
+<li><p>devBranch: This parameter defines which branch to test in this job.</p></li>
+<li><p>casePath: This parameter defines the relative path of SSTF.</p></li>
+<li><p>python interpreter path(optional): This parameter defines the absolute path of the python interpreter.</p></li>
+</ol>
 </div>
 </div>
 
