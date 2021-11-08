@@ -10,4 +10,5 @@ DSG SSW Automation
    :maxdepth: 2
    :caption: Contents:
 
-   About SSTF
+   SSTF Overview
+   SSTF Development Guide
