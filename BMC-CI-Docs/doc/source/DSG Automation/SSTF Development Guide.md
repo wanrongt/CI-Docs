@@ -26,6 +26,37 @@ SSTF uses ["GitHub Flow"](https://guides.github.com/introduction/flow/). Github 
 2. Install Allure
 3. Set environment variable "STU_Config". "SUT_Config" is the path where your local settings.py is.
 
+### Notices for Windows OS slave
+Sometimes, win10 OS slave may be automatically reset due to Window OS updating, 
+resulting in loss of connection of salve or sudden interruption of running tasks. 
+Therefore, we need to do some config to avoid it.
+
+1. set the Windows update service:
+   1. Launch the Run command (Win + R). Type in “services.msc” and hit Enter to open the service controller.
+      ![](./Images/services_msc.png)
+   2. Find the Windows update service, double click it and set its "Startup type" option value to "Manual"
+      ![](./Images/WindowsUpdateType.png)
+   3. Click "Recovery" option and set its three option value to "Take No Action"
+      ![](./Images/WindowsUpdateRecovery.png)
+   4. Click "Apply" button and save settings.
+
+
+2. set the Windows Group Policy
+   1. Launch the Run command (Win + R). Type in “gpedit.msc” and hit Enter to open the group policy editor.
+      ![](./Images/gpedit_msc.png)
+   2. Drill down through “Computer Configuration” to “Administrative Templates”. Select “Windows Components” and then “Windows Update”.
+      ![](./Images/WindowsUpdatePolicy.png)
+   3. Choose the option on the right to “Configure Automatic Updates.” Set it configure to "Disabled". Apply it and save.
+      ![](./Images/DisableConfigureAutomaticUpdates.png)
+   4. Choose the option on the right to "Allow Automatic Updates immediate installation". Set it configure to "Disabled". Apply it and save.
+      ![](./Images/DisabledAllowImmediateInstallationUpdate.png)
+
+3. Weekly check needing security patch and manually install it.
+   1. Open the application "Intel Security Checker"
+      ![](./Images/IntelSecurityChecker.png)
+   2. If existing any available updates patches, please timely install them.
+
+
 ## Development Jenkins Job usage guide.
 1. repoPath: This parameter defines the absolute path of your repository on SSTF host
 2. devBranch: This parameter defines which branch to test in this job. 
