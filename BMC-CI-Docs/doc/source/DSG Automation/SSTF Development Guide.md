@@ -51,7 +51,7 @@ Therefore, we need to do some config to avoid it.
    4. Choose the option on the right to "Allow Automatic Updates immediate installation". Set it configure to "Disabled". Apply it and save.
       ![](./Images/DisabledAllowImmediateInstallationUpdate.png)
 
-3. Weekly check needing security patch and manually install it.
+3. Check the required security patch every Monday and install it manually.
    1. Open the application "Intel Security Checker"
       ![](./Images/IntelSecurityChecker.png)
    2. If existing any available updates patches, please timely install them.
