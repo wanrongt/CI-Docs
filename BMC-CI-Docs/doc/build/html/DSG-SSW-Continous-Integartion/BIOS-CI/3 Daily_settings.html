@@ -1,73 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Daily settings &mdash; DSG SSW CI and Automation 1.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="BDBA scan" href="4%20BDBA_scan.html" />
     <link rel="prev" title="Configuration file" href="2%20Configuration_file.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> DSG SSW CI and Automation
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -75,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../On%20Board/index.html">On-Board</a></li>
@@ -111,84 +61,41 @@
 <li class="toctree-l1"><a class="reference internal" href="../../DSG%20Automation/index.html">DSG SSW Automation</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">DSG SSW CI and Automation</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../index.html">DSG SSW Continuous Integration</a> &raquo;</li>
-        
           <li><a href="index.html">BIOS CI</a> &raquo;</li>
-        
       <li>Daily settings</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../_sources/DSG-SSW-Continous-Integartion/BIOS-CI/3 Daily_settings.md.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="daily-settings">
-<h1>Daily settings<a class="headerlink" href="#daily-settings" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="daily-settings">
+<h1>Daily settings<a class="headerlink" href="#daily-settings" title="Permalink to this headline"></a></h1>
 <p><strong>Set Daily Release Build of BuildTarget</strong><br />The Daily project is divided into dependent items and Daily Target. You can refer to the construction structure of
 other projects.<br />Daily build pull the corresponding warehouse code at runtime, finds the files associated with the BIOS version. Then push and merge the changed BIOS version-related files, the commit message contains the BIOS version information.</p>
 <p>The build target in the same branch automatically triggers the build when it is found to have a merge action and the
 commit message contains version information. At which point the build type is recognized as a daily and the result
 image is stored under the Artifactory nightly path.</p>
-<div class="section" id="dependency-setting">
-<h2>(1) Dependency setting<a class="headerlink" href="#dependency-setting" title="Permalink to this headline">¶</a></h2>
+<section id="dependency-setting">
+<h2>(1) Dependency setting<a class="headerlink" href="#dependency-setting" title="Permalink to this headline"></a></h2>
 <p><strong>a. Structure settings</strong><br />Dependencies have a two-level structure. The first-level structure requires a Subproject to be created under Daily.
 The project name needs to follow certain naming conventions, which can be set according to the suggestions of colleagues
 in the CI department (or refer to other projects).</p>
@@ -218,9 +125,9 @@ Build Configuration Templates should be configured first, because Build Configur
 Configuration Templates, and each parameter of Build Configurations should also be configured in detail.
 <img alt="../../_images/3_8.png" src="../../_images/3_8.png" />
 After the dependencies are configured, you can configure the Target item.</p>
-</div>
-<div class="section" id="target-settings">
-<h2>(2) Target settings:<a class="headerlink" href="#target-settings" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="target-settings">
+<h2>(2) Target settings:<a class="headerlink" href="#target-settings" title="Permalink to this headline"></a></h2>
 <p>When setting the Target, you should also configure the Build Configuration Templates first. The parameter settings
 are similar to the previous configuration. You can copy the original build and change the parameters as needed. Need
 to pay attention to these two Triggers and Dependencies.</p>
@@ -235,9 +142,9 @@ to Triggers and Dependencies. The configuration is the same as Templates.</p>
 <p>Note that there is no image in Thely build, just a push and a file related to the BIOS version number, and you can see the comet message when the daily build push operation is done in the log:
 <img alt="../../_images/3_10.png" src="../../_images/3_10.png" />
 This information can be used to find the link that actually generated the image.</p>
-</div>
-<div class="section" id="view-the-daily-running-results">
-<h2>(3) View the daily running results<a class="headerlink" href="#view-the-daily-running-results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="view-the-daily-running-results">
+<h2>(3) View the daily running results<a class="headerlink" href="#view-the-daily-running-results" title="Permalink to this headline"></a></h2>
 <p>To view the daily results, follow these steps:</p>
 <p><strong>a. Determine the build of Daily</strong><br />Find the corresponding Target on teamcity
 <img alt="../../_images/3_11.png" src="../../_images/3_11.png" /></p>
@@ -256,55 +163,38 @@ artifactory.
 <p><strong>f. Image artifactory link description</strong><br />The download link of the image artifactory generated by the Daily build should be under &lt;https://ubit-artifactory-or
 .intel.com/artifactory/server-bios-staging-local/nightly/EGLSTRM&gt;, which uses the BIOS version as the folder name, so
 that every day The generated BIOS will be in this directory, and testers can download and test according to the BIOS version under this link.\</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="4%20BDBA_scan.html" class="btn btn-neutral float-right" title="BDBA scan" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="2%20Configuration_file.html" class="btn btn-neutral float-left" title="Configuration file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="4%20BDBA_scan.html" class="btn btn-neutral float-right" title="BDBA scan" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Ruby.
-
-    </p>
+    <p>&#169; Copyright 2021, Ruby.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
