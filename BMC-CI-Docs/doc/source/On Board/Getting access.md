@@ -69,19 +69,24 @@
      ```
 
 ### (3)Scan reports
-- **BDBA:**
+- **BDBA:(BIOS AND BMC)**
 
   1.This entitlement grants access to BDBA IFWI and UEFI  scan reports
 
   ```
-  DevTools - Binary Analysis - IAGS_SSP_Firmware on AD-CORP
+  DevTools - TeamCity - BinaryAnalysis - UBIT-TC-JF - Project Developer
   ```
 * **Klocwork** :
 
-  1.This entitlement grants access to OPENBMC related Klocwork reports.
+  1.(BMC) This entitlement grants access to OPENBMC related Klocwork reports.
 
   ```
   OPENBMC-KLOCWORK-AGS on AD-CORP   
+  ```
+  2.(BIOS) This entitlement grants access to BIOS related Klocwork reports.
+
+  ```
+  BIOS Stakeholder - ITS   
   ```
 
 + [Protex](https://amrprotex006.devtools.intel.com/protex/ProtexLoginPage;jsessionid=78D1C1A052577C8A4ADC84269625DD1F#0=dW,dx,gc,gL,fI,cS):
