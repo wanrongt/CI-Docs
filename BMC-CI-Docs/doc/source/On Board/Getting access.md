@@ -12,6 +12,13 @@
   DevTools - TeamCity - BinaryAnalysis - UBIT-TC-JF - Project Developer
   DevTools - - SSG_CI_Ctrl - Project developer
   ```
+  **Github**
+
+  1.Provides write permission for blue badges outside of FST for both Intel Innersource and Intel Restricted
+
+   ```
+  BIOS Stakeholder
+  ``` 
 
 - [**Jira**](https://jira.devtools.intel.com/):
 
@@ -28,6 +35,15 @@
   ```
 
 ### (2)BMC:
+
+**Jenkins**
+
+1.Get access to jenkins build jobs
+
+  ```
+  Please provide CI team member with jenkins login username.
+  ```
+
 
 - **Artifactory:**
 
