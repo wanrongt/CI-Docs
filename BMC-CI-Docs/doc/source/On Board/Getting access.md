@@ -12,7 +12,7 @@
   DevTools - TeamCity - BinaryAnalysis - UBIT-TC-JF - Project Developer
   DevTools - - SSG_CI_Ctrl - Project developer
   ```
-  **Github**
+- **Github**
 
   1.Provides write permission for blue badges outside of FST for both Intel Innersource and Intel Restricted
 
@@ -36,7 +36,7 @@
 
 ### (2)BMC:
 
-**Jenkins**
++ **Jenkins**
 
 1.Get access to jenkins build jobs
 
