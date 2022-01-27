@@ -1,95 +1,95 @@
-class BIOSUiSetupElement(object):
-    def get_processors_l2_cache_ram(self, timeout=20):
-        """*Advanced -> Processor Configuration -> L2 Cache RAM*
+	class BIOSUiSetupElement(object):
+	def get_processors_l2_cache_ram(self, timeout=20):
+		"""*Advanced -> Processor Configuration -> L2 Cache RAM*
 
-        get processors L2 cache ram value in KB, When the CPU is not installed,
-        the obtained l2 cache is "N/A" and return None
+		get processors L2 cache ram value in KB, When the CPU is not installed,
+		the obtained l2 cache is "N/A" and return None
 
-        :param timeout: End the program after the specified seconds have elapsed
-        :return: processors L2 cache ram value in KB in list
-        """
+		:param timeout: End the program after the specified seconds have elapsed
+		:return: processors L2 cache ram value in KB in list
+		"""
 
-    def get_total_processor_cores(self, timeout=20):
-        """*Advanced -> Processor Configuration -> Total Processor Cores*
+	def get_total_processor_cores(self, timeout=20):
+		"""*Advanced -> Processor Configuration -> Total Processor Cores*
 
-        get total processor cores
+		get total processor cores
 
-        :param timeout: End the program after the specified seconds have elapsed
-        :return: the number of cores in the processor package
-        """
+		:param timeout: End the program after the specified seconds have elapsed
+		:return: the number of cores in the processor package
+		"""
 
-    def get_current_tpm_device(self, timeout=20):
-        """*Security -> Current TPM Device*
+	def get_current_tpm_device(self, timeout=20):
+		"""*Security -> Current TPM Device*
 
-        get current TPM device, this item will not be able to get and return
-        timeout if TPM device is not active
+		get current TPM device, this item will not be able to get and return
+		timeout if TPM device is not active
 
-        :param timeout: End the program after the specified seconds have elapsed
-        :return: current TPM device or None
-        """
+		:param timeout: End the program after the specified seconds have elapsed
+		:return: current TPM device or None
+		"""
 
-    def get_memory_encryption(self, timeout=20):
-        """*Advanced -> Processor Configuration -> Memory Encryption (TME)*
+	def get_memory_encryption(self, timeout=20):
+		"""*Advanced -> Processor Configuration -> Memory Encryption (TME)*
 
-        get the TME setting
+		get the TME setting
 
-        :param timeout: End the program after the specified seconds have elapsed
-        :return: the TME setting
-        """
+		:param timeout: End the program after the specified seconds have elapsed
+		:return: the TME setting
+		"""
 
-    def set_memory_encryption(self, value, timeout=20):
-        """*Advanced -> Processor Configuration -> Memory Encryption (TME)*
+	def set_memory_encryption(self, value, timeout=20):
+		"""*Advanced -> Processor Configuration -> Memory Encryption (TME)*
 
-        changing the TME setting
+		changing the TME setting
 
-        :param value: the value that would perform. Currently would support list is:
-            Disabled, Enabled, defaults to Disabled
-        :param timeout: End the program after the specified seconds have elapsed
-        :return: Execution completion code.
-        """
+		:param value: the value that would perform. Currently would support list is:
+			Disabled, Enabled, defaults to Disabled
+		:param timeout: End the program after the specified seconds have elapsed
+		:return: Execution completion code.
+		"""
 
-    def get_intel_txt(self, timeout=20):
-        """*Advanced -> Processor Configuration -> Intel(R) TXT*
+	def get_intel_txt(self, timeout=20):
+		"""*Advanced -> Processor Configuration -> Intel(R) TXT*
 
-        get the Intel TXT setting
+		get the Intel TXT setting
 
-        :param timeout: End the program after the specified seconds have elapsed
-        :return: Intel TXT setting
-        """
+		:param timeout: End the program after the specified seconds have elapsed
+		:return: Intel TXT setting
+		"""
 
-    def set_intel_txt(self, value, timeout=20):
-        """*Advanced -> Processor Configuration -> Intel(R) TXT*
+	def set_intel_txt(self, value, timeout=20):
+		"""*Advanced -> Processor Configuration -> Intel(R) TXT*
 
-        changing the Intel TXT setting, the TPM must be active, otherwise the item
-        will be gray out. It requires the system to perform a hard reset for the
-        setting to become effective
+		changing the Intel TXT setting, the TPM must be active, otherwise the item
+		will be gray out. It requires the system to perform a hard reset for the
+		setting to become effective
 
-        :param value: the value that would perform. Currently would support list is:
-            Disabled, Enabled, defaults to Disabled
-        :param timeout: End the program after the specified seconds have elapsed
-        :return: Execution completion code.
-        """
+		:param value: the value that would perform. Currently would support list is:
+			Disabled, Enabled, defaults to Disabled
+		:param timeout: End the program after the specified seconds have elapsed
+		:return: Execution completion code.
+		"""
 
-    def get_intel_vt_for_directed(self, timeout=20):
-        """*Advanced -> Integrated IO configuration -> Intel(R) VT for Directed I/O*
+	def get_intel_vt_for_directed(self, timeout=20):
+		"""*Advanced -> Integrated IO configuration -> Intel(R) VT for Directed I/O*
 
-        get Intel(R) VT for Directed I/O setting
+		get Intel(R) VT for Directed I/O setting
 
-        :param timeout: End the program after the specified seconds have elapsed
-        :return: the Intel(R) VT for Directed setting
-        """
+		:param timeout: End the program after the specified seconds have elapsed
+		:return: the Intel(R) VT for Directed setting
+		"""
 
-    def set_intel_vt_for_directed(self, value, timeout=20):
-        """*Advanced -> Integrated IO configuration -> Intel(R) VT for Directed I/O*
+	def set_intel_vt_for_directed(self, value, timeout=20):
+		"""*Advanced -> Integrated IO configuration -> Intel(R) VT for Directed I/O*
 
-        changing the Intel(R) VT for Directed I/O setting, when changing Intel VT
-        from Enabled to Disabled, first make sure Intel TXT is set to Disabled
+		changing the Intel(R) VT for Directed I/O setting, when changing Intel VT
+		from Enabled to Disabled, first make sure Intel TXT is set to Disabled
 
-        :param value: the value that would perform. Currently would
-            support list is: Disabled, Enabled, defaults to Disabled
-        :param timeout: End the program after the specified seconds have elapsed
-        :return: Execution completion code
-        """ 
+		:param value: the value that would perform. Currently would
+			support list is: Disabled, Enabled, defaults to Disabled
+		:param timeout: End the program after the specified seconds have elapsed
+		:return: Execution completion code
+		""" 
 		
 	def get_processors_l3_cache_ram(self, timeout=20):
 		"""*Advanced>processor configuration >l3 cache*
