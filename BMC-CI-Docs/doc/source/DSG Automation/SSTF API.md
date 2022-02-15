@@ -1,3 +1,5 @@
+# SSTF API
+
 class BIOSUiSetupElement(object):
 	def get_processors_l2_cache_ram(self, timeout=20):
 		"""*Advanced -> Processor Configuration -> L2 Cache RAM*
