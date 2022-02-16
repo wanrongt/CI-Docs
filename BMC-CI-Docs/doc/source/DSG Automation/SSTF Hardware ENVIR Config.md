@@ -2,7 +2,7 @@
 
 ## Material shows
 
-![](.\SSTF Hardware ENVIR Config.assets\A.png)
+![](./SSTF Hardware ENVIR Config.assets/A.png)
 
 ![](.\SSTF Hardware ENVIR Config.assets\Annotation 2022-01-25 143714.png)
 
