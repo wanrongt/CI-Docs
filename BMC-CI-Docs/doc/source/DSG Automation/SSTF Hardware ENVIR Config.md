@@ -2,25 +2,29 @@
 
 ## Material shows
 
-![](./SSTF Hardware ENVIR Config.assets/A.png)
+![](./Images/A.png)
 
-![](.\SSTF Hardware ENVIR Config.assets\Annotation 2022-01-25 143714.png)
+![](./Images/a003.png)
+
+
 
 ## Material list & check
 
-| Name                              | quantity |
-| --------------------------------- | -------- |
-| 1. BMC serial port cable          | x 1      |
-| 2. BIOS serial port cable         | x 1      |
-| 3. USB to LAN device              | x 1      |
-| 4. RSC2 To SUT Power supply cable | x 2      |
-| 5. RSC2 Power supply cable        | x 2      |
-| 6. Host                           | x 1      |
-| 7. RSC2 Box                       | x 1      |
-| 8. KVM Remote                     | x 1      |
-| 9. Host-SUT & SUT-RSC2 cable      | x 2      |
-| 10. Switch                        | x 1      |
-| 11. SUT                           | x 1      |
+|              name              | quantity |
+| :----------------------------: | -------- |
+|     BMC serial port cable      | x 1      |
+|     BIOS serial port cable     | x 1      |
+|       USB to LAN device        | x 1      |
+| RSC2 To SUT Power supply cable | x 2      |
+|    RSC2 Power supply cable     | x 2      |
+|              Host              | x 1      |
+|            RSC2 Box            | x 1      |
+|           KVM Remote           | x 1      |
+|   Host-SUT & SUT-RSC2 cable    | x 2      |
+|             Switch             | x 1      |
+|              SUT               | x 1      |
+
+
 
 ## BIOS cable link & check
 
@@ -28,37 +32,35 @@
 
 BIOS cable is used to access the BIOS of the SUT on Host. One end of bios cable link the USB port of the HOST and the other end is link SUT net port, as shown below.
 
-![](.\SSTF Hardware ENVIR Config.assets\Picture14.png)
+![](./Images/a11.png)
 
-​																BIOS cable link SUT net port  
-
-### connection verification
+![](./Images/a29.png)
 
 
 
-1. Open the MobaXterm app  ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 212131.png)
+1. Open the MobaXterm app  ![](./Images/a13.png)
 
 2. After the application starts, enter the session page
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 212344.png)
+   ![](./Images/a15.png)
 
 3. Select Serial option
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 212423.png)
+   ![](./Images/a17.png)
 
    
 
 4. Select the serial port number for connecting the bios cable ,and select 115200 Speed(bps).
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 212558.png)
+   ![](./Images/a19.png)
 
 5. click ok
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Annotation 2022-01-25 150420.png)
+   ![](./Images/a004.png)
 
 6. Double-click the Serial option you just added ,Then press Enter,If the Bios set-up page is displayed, Indicates that the connection is successful
 
-   ![](.\SSTF Hardware ENVIR Config.assets\yike.png)
+   ![](./Images/a27.png)
 
    ​		Notice: Do not select the wrong Port number and speed value. If the BMC login prompt is not 		    displayed at the end, check the link of the bios cable.
 
@@ -72,9 +74,7 @@ BIOS cable is used to access the BIOS of the SUT on Host. One end of bios cable 
 
 BMC cable is used to access the BMC of the SUT on Host. One end of BMC cable link the USB port of the HOST and the other end is inserted into the J18 position on the board.
 
-![](.\SSTF Hardware ENVIR Config.assets\Picture13.png)
-
-​																 ( J18 position on the board )
+![](./Images/a10.png)  ![](./Images/a30.png)
 
 ​	Notice: When inserted into the board, the white line should be aligned with the small triangle on the  pictured above
 
@@ -82,29 +82,29 @@ BMC cable is used to access the BMC of the SUT on Host. One end of BMC cable lin
 
 ### connection verification
 
-1. Open the MobaXterm app ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 212131-1643098482752.png)
+1. Open the MobaXterm app ![](./Images/a14.png)
 
 2. Go to the Session page
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 212344-1643098486345.png)
+   ![](./Images/a16.png)
 
 3. Select Serial option
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 212423-1643098492151.png)
+   ![](./Images/a18.png)
 
 4. Select the serial port number for connecting the BMC cable ,and select 115200 Speed(bps).
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 212558-1643098494891.png)
+   ![](./Images/a20.png)
 
    ​						notice: the serial port numbers of BMC and bios are different
 
 5. click ok
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Annotation 2022-01-25 150420-1643098498786.png)
+   ![](./Images/a005.png)
 
 6. Double-click the Serial option you just added ,Then press Enter,If the BMC login page is displayed, Indicates that the connection is successful
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 212729.png)
+   ![](./Images/a21.png)
 
     	 
 
@@ -125,9 +125,9 @@ also performs AC/DC power cycling via a shared USB drive. The shared USB drive
 can be used to copy files or test program to the SUT, and can be further used to
 install an operating system remotely.
 
-![](.\SSTF Hardware ENVIR Config.assets\Annotation 2022-01-25 152111.png)
+![](./Images/a006.png)
 
-​																Remote control diagram
+![](./Images/a31.png)
 
 ### connection display
 
@@ -135,12 +135,12 @@ Follow these steps to begin using your RSC2
 
 1) Install the software package found on the RSC2 installation media.
 
-![](.\SSTF Hardware ENVIR Config.assets\Annotation 2022-01-25 152359.png)
+![](./Images/a007.png)
 
 2) go to Windows Services manager and ensure the RSC2
 Server service is Started.
 
-![](.\SSTF Hardware ENVIR Config.assets\Annotation 2022-01-24 202102.png)
+![](./Images/a002.png)
 
 
 
@@ -158,43 +158,39 @@ e. Insert a USB flash drive into the “USB DRIVE” connector on the front pane
 
 Your system should look like this when done:
 
-![](.\SSTF Hardware ENVIR Config.assets\Annotation 2022-01-25 152827.png)
-
-
+![](./Images/a008.png)
 
 
 
 4)The other end of the front panel cable is inserted into the SSI_FRONT_PANEL position on the SUT
 
-![](.\SSTF Hardware ENVIR Config.assets\Picture15.png)
-
-​																		SSI_FRONT_PANEL Position  On SUT
+![](./Images/a12.png)	![](./Images/a32.png)
 
 ### connection verification
 
-1. Launch the software![](.\SSTF Hardware ENVIR Config.assets\Annotation 2022-01-24 201819.png)
+1. Launch the software![](./Images/a001.png)
 
 2. Click the ‘Add Host’ button to add a new RSC2 
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 222444.png)
+   ![](./Images/a22.png)
 
 3. Select Local and click Find
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-23 222505.png)
+   ![](./Images/a23.png)
 
 4. double click the searched option
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-24 212201.png)
+   ![](./Images/a24.png)
 
    ​										Searched option ：displays the host name and device name
 
 5.   SUT can be controlled through RSC2 ,the page display after entering is as shown in the figure below
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-25 154729.png)
+   ![](./Images/a25.png)
 
 6. Press AC power a and AC power B to turn the green display into green and check the power failure of SUT. If the power failure is successful, it indicates that the rsc2 connection is successful
 
-   ![](.\SSTF Hardware ENVIR Config.assets\Screenshot 2022-01-25 154756.png)
+   ![](./Images/a26.png)
 
    
    
