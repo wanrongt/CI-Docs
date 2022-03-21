@@ -12,3 +12,5 @@ DSG SSW Automation
 
    SSTF Overview
    SSTF Development Guide
+   SSTF API
+   SSTF Hardware ENVIR Config

@@ -1,34 +1,73 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Configuration file &mdash; DSG SSW CI and Automation 1.0 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Daily settings" href="3%20Daily_settings.html" />
     <link rel="prev" title="Material preparation" href="1%20Material_preparation.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="../../index.html" class="icon icon-home"> DSG SSW CI and Automation
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -36,7 +75,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../On%20Board/index.html">On-Board</a></li>
@@ -61,38 +111,81 @@
 <li class="toctree-l1"><a class="reference internal" href="../../DSG%20Automation/index.html">DSG SSW Automation</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">DSG SSW CI and Automation</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="../index.html">DSG SSW Continuous Integration</a> &raquo;</li>
+        
           <li><a href="index.html">BIOS CI</a> &raquo;</li>
+        
       <li>Configuration file</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../_sources/DSG-SSW-Continous-Integartion/BIOS-CI/2 Configuration_file.md.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="configuration-file">
-<h1>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline"></a></h1>
+            
+  <div class="section" id="configuration-file">
+<h1>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h1>
 <p>Bios build uses XML files to configure the key information needed in the BIOS Build process, such as which repository
 and branch to pull code from; which packages in the repository are pulled; what commands are executed during the build process; This file needs to be configured in the iafw-cr-manifest warehouse. The warehouse file will be pulled during the build, and the corresponding configuration file will be read to trigger the relevant build.</p>
-<section id="configure-manifest-xml-file">
-<h2>(1) Configure manifest XML file<a class="headerlink" href="#configure-manifest-xml-file" title="Permalink to this headline"></a></h2>
+<div class="section" id="configure-manifest-xml-file">
+<h2>(1) Configure manifest XML file<a class="headerlink" href="#configure-manifest-xml-file" title="Permalink to this headline">¶</a></h2>
 <p>Download the manifest warehouse and checkout to the iafw-cr-manifest repository</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">edkrepo</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">workspace</span><span class="o">&gt;</span> <span class="n">CrManifest</span>
 <span class="n">cd</span> <span class="o">&lt;</span><span class="n">workspace</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">iafw</span><span class="o">-</span><span class="n">cr</span><span class="o">-</span><span class="n">manifest</span>
@@ -125,9 +218,9 @@ message and personal information of this commit in the editor <strong>(signed_of
 <p>Submit the changes to the remote warehouse for review and merge<br />If this change is found to be changed during the review process, after modifying the file locally, re-use the <strong>git
 add, git commit –amend, edkrepo send-review</strong> commands to manage the push changes, and the two review links are the
 same.</p>
-</section>
-<section id="configure-teamcity-build-target">
-<h2>(2) Configure TeamCity Build Target<a class="headerlink" href="#configure-teamcity-build-target" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="configure-teamcity-build-target">
+<h2>(2) Configure TeamCity Build Target<a class="headerlink" href="#configure-teamcity-build-target" title="Permalink to this headline">¶</a></h2>
 <p><strong>a.TeamCity Document:</strong><br /><a class="reference external" href="https://www.jetbrains.com/teamcity/learn/">https://www.jetbrains.com/teamcity/learn/</a></p>
 <p><strong>b. BIOS CI Team TeamCity Server Information</strong><br /><a class="reference external" href="https://teamcity02-staging.intel.com/">https://teamcity02-staging.intel.com/</a><br /><a class="reference external" href="https://teamcity03-staging.intel.com/">https://teamcity03-staging.intel.com/</a><br /><a class="reference external" href="https://teamcity03-or.intel.com/login.html">https://teamcity03-or.intel.com/login.html</a><br /><a class="reference external" href="https://teamcity02-or.intel.com/login.html">https://teamcity02-or.intel.com/login.html</a>\</p>
 <p>BIOS CI tasks are mainly deployed on the 02 and 03 servers. The production environment with <strong>or</strong> is the actual
@@ -162,9 +255,9 @@ inherited original template.</p>
 <img alt="../../_images/2_8.png" src="../../_images/2_8.png" />
 <img alt="../../_images/2_9.png" src="../../_images/2_9.png" />
 <img alt="../../_images/2_10.png" src="../../_images/2_10.png" /></p>
-</section>
-<section id="test-whether-the-build-works-normally">
-<h2>(3) Test whether the build works normally<a class="headerlink" href="#test-whether-the-build-works-normally" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="test-whether-the-build-works-normally">
+<h2>(3) Test whether the build works normally<a class="headerlink" href="#test-whether-the-build-works-normally" title="Permalink to this headline">¶</a></h2>
 <p>After setting up the build target, since our own build target is based on our own git branch, we need to develop and
 push related code of EagleStreamPC to the corresponding branch.<br />Note that after developing the push code, and then pulling the remote warehouse to check whether the development
 of the push code is successful, the git command: <strong>git sparse-checkout disable</strong> is required. Because <strong>sparse-checkout</strong>
@@ -180,38 +273,55 @@ running on teamcity02-or.
 <p>The <code class="docutils literal notranslate"><span class="pre">refs/changes/09/125709/8</span></code> in the middle is the name of the generated temporary branch. Paste this branch name
 into the parameter iafw-cr-manifest value of TeamCity run, and then run to test whether the manifest file using
 review can be used make the corresponding build target work normally.<br />When all build targets are working normally, you can merge the manifest file.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="1%20Material_preparation.html" class="btn btn-neutral float-left" title="Material preparation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="3%20Daily_settings.html" class="btn btn-neutral float-right" title="Daily settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="1%20Material_preparation.html" class="btn btn-neutral float-left" title="Material preparation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Ruby.</p>
-  </div>
+    <p>
+        &#169; Copyright 2021, Ruby.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>BDBA Scan Report : Auto-override lib version &mdash; DSG SSW CI and Automation 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DSG SSW Automation" href="../../DSG%20Automation/index.html" />
+    <link rel="prev" title="DSG BMC CI Process" href="DSG%20BMC%20CI%20Process.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> DSG SSW CI and Automation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../On%20Board/index.html">On-Board</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">DSG SSW Continuous Integration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../SSW-BIOS-BMC-build-and-release-process/index.html">Build and release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BIOS-CI/index.html">BIOS CI</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">BMC CI</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="DSG%20BMC%20CI%20Process.html">DSG BMC CI Process</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">BDBA Scan Report : Auto-override lib version</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#task-requirement">Task Requirement:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task-breakdown">Task breakdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#script-design">Script design</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../DSG%20Automation/index.html">DSG SSW Automation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">DSG SSW CI and Automation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">DSG SSW Continuous Integration</a> &raquo;</li>
+        
+          <li><a href="index.html">BMC CI</a> &raquo;</li>
+        
+      <li>BDBA Scan Report : Auto-override lib version</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/DSG-SSW-Continous-Integartion/BMC-CI/BDBA Scan Report_Override lib version.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bdba-scan-report-auto-override-lib-version">
+<h1>BDBA Scan Report : Auto-override lib version<a class="headerlink" href="#bdba-scan-report-auto-override-lib-version" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="task-requirement">
+<h2>Task Requirement:<a class="headerlink" href="#task-requirement" title="Permalink to this headline">¶</a></h2>
+<p>Here are the details about requirement requested by Xu,Qianjin:</p>
+<ol class="simple">
+<li><p>Fill in the version of all open source  components;</p></li>
+<li><p>Leverage the triage result in earlier versions;</p></li>
+<li><p>Generate a analyzed BDBA report, take Whitley implementation as an example.</p></li>
+</ol>
+<p><img alt="../../_images/p21.png" src="../../_images/p21.png" /></p>
+</div>
+<div class="section" id="task-breakdown">
+<h2>Task breakdown<a class="headerlink" href="#task-breakdown" title="Permalink to this headline">¶</a></h2>
+<p>1.Determine current versions of all the open source libraries for EaglestreamPc</p>
+<p>(1) Lib with bb files in “dsg-openbmc-openbmc” code repo</p>
+<ul class="simple">
+<li><p>Extract lib version from bb files name, take “expat” as a example
+<img alt="../../_images/p22.png" src="../../_images/p22.png" /></p></li>
+</ul>
+<p>(2) Lib without bb files in code repo</p>
+<ul class="simple">
+<li><p>use devtool to obtain version</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">openbmc</span><span class="o">/</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">build</span><span class="o">/</span>
+<span class="n">export</span> <span class="n">TEMPLATECONF</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">wanrong</span><span class="o">/</span><span class="n">openbmc</span><span class="o">/</span><span class="n">openbmc</span><span class="o">-</span><span class="n">meta</span><span class="o">-</span><span class="n">intel</span><span class="o">/</span><span class="n">meta</span><span class="o">-</span><span class="n">egs</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span>
+<span class="n">source</span> <span class="n">oe</span><span class="o">-</span><span class="n">init</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">env</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">devtool</span> <span class="n">latest</span><span class="o">-</span><span class="n">version</span> <span class="p">{</span><span class="n">lib_name</span><span class="p">}</span>
+<span class="n">devtool</span> <span class="n">search</span> <span class="p">{</span><span class="n">lib_name</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Take lib “libpam” as a example:
+<img alt="../../_images/p23.png" src="../../_images/p23.png" /></p></li>
+<li><p>Record current lib name without bb files:</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">BDBA Library</th>
+<th>Latest  Version</th>
+<th>Current  Version</th>
+<th>Lib  name in code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">linux-pam</td>
+<td>1.5.2</td>
+<td>1.3.1</td>
+<td>libpam</td>
+</tr>
+<tr>
+<td align="center">linux_kernel</td>
+<td>5.16.11</td>
+<td>5.10.67</td>
+<td>linux-aspeed</td>
+</tr>
+<tr>
+<td align="center">mtd</td>
+<td>2.1.3</td>
+<td>1.1.6</td>
+<td>mtdev</td>
+</tr>
+<tr>
+<td align="center">python</td>
+<td>3.9.6</td>
+<td>3.9.6</td>
+<td>python3</td>
+</tr>
+<tr>
+<td align="center">kmod</td>
+<td>29</td>
+<td>29</td>
+<td>kmod</td>
+</tr>
+<tr>
+<td align="center">tdb</td>
+<td>1.4.6</td>
+<td>1.4.3</td>
+<td>libtdb</td>
+</tr>
+<tr>
+<td align="center">liblzo2</td>
+<td>2.1</td>
+<td>2.1</td>
+<td>lzo</td>
+</tr>
+<tr>
+<td align="center">libiniparser</td>
+<td>4.1</td>
+<td>4.1</td>
+<td>iniparser</td>
+</tr>
+<tr>
+<td align="center">kerberos</td>
+<td>1.17.2</td>
+<td>1.17.2</td>
+<td>krb5</td>
+</tr>
+<tr>
+<td align="center">safestring</td>
+<td>None</td>
+<td>3.4</td>
+<td>safec</td>
+</tr>
+<tr>
+<td align="center">systemd-shim</td>
+<td>None</td>
+<td>249.3</td>
+<td>systemd</td>
+</tr>
+</tbody>
+</table><p>2.Update the open source library to the correct version, consistent with the one on the BDBA server</p>
+<p>(1)BDBA API</p>
+<p>BDBA API LINK: <a class="reference external" href="https://bdba001.icloud.intel.com/help/api/#api-endpoints">https://bdba001.icloud.intel.com/help/api/#api-endpoints</a></p>
+<p>(2)Use <strong>cur</strong> command to get info from BDBA server ,such as open source libraries list</p>
+<ul class="simple">
+<li><p>List groups:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">k</span> <span class="o">-</span><span class="n">s</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bdba001</span><span class="o">.</span><span class="n">icloud</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">groups</span><span class="o">/</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Get analysis results:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">k</span> <span class="o">-</span><span class="n">s</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bdba001</span><span class="o">.</span><span class="n">icloud</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">product</span><span class="o">/</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add/modify version overrides</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">k</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">T</span> <span class="s2">&quot;+VERSION_OVERRIDE_JSON_PATH+&quot;</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bdba001</span><span class="o">.</span><span class="n">icloud</span><span class="o">.</span><span class="n">intel</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">versionoverride</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>3.Optimize the format of the BDBA report</p>
+<ul class="simple">
+<li><p>Clean the data from BDBA server and match lib name to lib version in use while generating final table
+<img alt="../../_images/p24.png" src="../../_images/p24.png" />
+<img alt="../../_images/p25.png" src="../../_images/p25.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="script-design">
+<h2>Script design<a class="headerlink" href="#script-design" title="Permalink to this headline">¶</a></h2>
+<p>1.Introduction：</p>
+<p>Override BDBA open source library version that bdba website recognizes incorrectly and generated analyzed report every week.</p>
+<p>2.Easy to use:</p>
+<p>(1) Trigger build job <a class="reference external" href="http://sstf.sh.intel.com:8080/job/EagleStreamPc/job/BMC_BDBA_FIND_LIB_VERSION/">“BMC_BDBA_FIND_LIB_VERSION”</a> in SSTF server</p>
+<p><img alt="../../_images/p26.png" src="../../_images/p26.png" /></p>
+<p>(2) Download script from github repo <a class="reference external" href="https://github.com/wanrongt/Scan-Report-Mail-Notification/tree/main/Scan_Report_Mail">“<strong>Scan_Report_Mail</strong>”</a>and Run it with python3 Environment</p>
+<p>3.Main process:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="n">Use</span> <span class="n">Jenkins</span> <span class="n">API</span> <span class="n">to</span> <span class="n">get</span> <span class="n">daily</span> <span class="n">build</span> <span class="n">version</span> <span class="ow">and</span> <span class="n">BDBA</span> <span class="n">report</span> <span class="n">link</span>
+
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">Get</span> <span class="n">analysis</span> <span class="n">results</span> <span class="ow">and</span> <span class="n">Extract</span> <span class="n">lib</span> <span class="n">name</span> <span class="nb">list</span> <span class="kn">from</span> <span class="nn">json</span> <span class="n">data</span>
+
+<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">Find</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">lib</span> <span class="n">version</span> <span class="ow">and</span> <span class="n">Add</span> <span class="n">version</span> <span class="n">overrides</span>
+
+<span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="n">Create</span> <span class="n">analyzed</span> <span class="n">report</span> <span class="ow">and</span> <span class="n">Send</span> <span class="n">mail</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../DSG%20Automation/index.html" class="btn btn-neutral float-right" title="DSG SSW Automation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="DSG%20BMC%20CI%20Process.html" class="btn btn-neutral float-left" title="DSG BMC CI Process" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ruby.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
