@@ -93,7 +93,7 @@ Override BDBA open source library version that bdba website recognizes incorrect
 
 (1) Trigger build job ["BMC_BDBA_FIND_LIB_VERSION"]( http://sstf.sh.intel.com:8080/job/EagleStreamPc/job/BMC_BDBA_FIND_LIB_VERSION/) in SSTF server
 
-![](./Images/p26.png)
+![](./Images/P26.png)
 
 (2) Download script from github repo ["**Scan_Report_Mail**"](https://github.com/wanrongt/Scan-Report-Mail-Notification/tree/main/Scan_Report_Mail)and Run it with python3 Environment
 
