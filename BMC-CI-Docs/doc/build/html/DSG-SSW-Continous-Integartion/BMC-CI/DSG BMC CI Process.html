@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>DSG BMC CI Process &mdash; DSG SSW CI and Automation 1.0 documentation</title>
+  <title>EGS BMC CI Process &mdash; DSG SSW CI and Automation 1.0 documentation</title>
   
 
   
@@ -94,13 +94,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../SSW-BIOS-BMC-build-and-release-process/index.html">Build and release process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../BIOS-CI/index.html">BIOS CI</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">BMC CI</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">DSG BMC CI Process</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#code-repository-gitlab">Code repository — Gitlab</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">EGS BMC CI Process</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#code-repository-github">Code repository — Github</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ci-build-tool-jenkins">CI Build tool — Jenkins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#build-dsg-bmc-project">Build DSG BMC project</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#trigger-automatically-build-tasks-by-jenkins">Trigger automatically build tasks by Jenkins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#trigger-manually-tasks-by-jenkins">Trigger manually tasks by Jenkins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#build-manually-by-command-in-the-mobaxterm">Build manually by command in the MobaXterm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step5-create-a-github-secret-key">Step5: Create a github secret key</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#view-the-build-result">View the build result</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#find-the-image">Find  the image</a></li>
 </ul>
@@ -163,7 +164,7 @@
         
           <li><a href="index.html">BMC CI</a> &raquo;</li>
         
-      <li>DSG BMC CI Process</li>
+      <li>EGS BMC CI Process</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -182,24 +183,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dsg-bmc-ci-process">
-<h1>DSG BMC CI Process<a class="headerlink" href="#dsg-bmc-ci-process" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="code-repository-gitlab">
-<h2>Code repository — Gitlab<a class="headerlink" href="#code-repository-gitlab" title="Permalink to this headline">¶</a></h2>
-<p>​        <a class="reference external" href="https://github.com/openbmc/openbmc">Openbmc</a> is an open source project , and the <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc">DSG BMC </a> project based on Openbmc is placed in <a class="reference external" href="https://gitlab.devtools.intel.com/">gitlab</a>. We mainly focus on four parts: <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-openbmc">dsg-openbmc-openbmc</a>,  <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-meta-intel">dsg-openbmc-meta-intel</a>, <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/features">features</a> and <a class="reference external" href="https://gitlab.devtools.intel.com/dsg-bmc/openbmc-ci">openbmc-ci</a>. As shown in Fig1.</p>
+  <div class="section" id="egs-bmc-ci-process">
+<h1>EGS BMC CI Process<a class="headerlink" href="#egs-bmc-ci-process" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="code-repository-github">
+<h2>Code repository — Github<a class="headerlink" href="#code-repository-github" title="Permalink to this headline">¶</a></h2>
+<p>​        <a class="reference external" href="https://github.com/openbmc/openbmc">OpenBMC</a> project is a Linux Foundation project whose goal is to produce a customizable, open-source firmware stack for Baseboard Management Controllers (BMCs).
+DSG BMC EGS platform is based on OpenBMC project. As for source code,we mainly focus on four parts as below:</p>
 <ul class="simple">
-<li><p><strong>Dsg-openbmc-openbmc</strong> is obtained by clone of the <strong>Openbmc</strong> in github.</p></li>
-<li><p><strong>Dsg-openbmc-meta-intel</strong> is a project where developers create their own branches for feature development. Some git address links,not the actual code, are placed in the dsg-openbmc-meta-intel file. And the project code of features can be pulled by these links.</p></li>
-<li><p>The project source code is put in the <strong>features</strong> project, and the code is classified in terms of the featrues.</p></li>
-<li><p>Some Jenkinsfiles are stored in the <strong>openbmc-ci</strong> project, and we can know the CI build process details by <strong>Jenkinsfile</strong>.</p></li>
+<li><p><a class="reference external" href="https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.dsg-openbmc-openbmc"><strong>Dsg-openbmc-openbmc</strong></a> is obtained by clone of the <strong>OpenBMC</strong> project.</p></li>
+<li><p><a class="reference external" href="https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.dsg-openbmc-meta-intel"><strong>Dsg-openbmc-meta-intel</strong></a> is a necessary repository with many git address links pointing feature repo. As almost all feature repo code need be pulled by these links,this repo is very important for our
+daily build and plays a key role in platform development.</p></li>
+<li><p>There’re many featrue repo for BMC EGS platform in intel-collab organization,such as <a class="reference external" href="https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.features.bmcweb"><strong>bmcweb</strong></a></p></li>
+<li><p><a class="reference external" href="https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.dsg-openbmc-openbmc">openbmc-jenkins</a> is a repo for <strong>CI build</strong>,and we can know the CI build process details by <strong>Jenkinsfile</strong>.
+<img alt="../../_images/P1.png" src="../../_images/P1.png" />
+Fig1. Code repo in intel-collab organization</p></li>
 </ul>
-<p><img alt="../../_images/p01.png" src="../../_images/p01.png" /></p>
-<p>​                                  Fig1. Schematic diagram of the DSG BMC project structure in gitlab</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="ci-build-tool-jenkins">
 <h2>CI Build tool — Jenkins<a class="headerlink" href="#ci-build-tool-jenkins" title="Permalink to this headline">¶</a></h2>
-<p>​    DSG BMC CI tasks are deployed in <a class="reference external" href="https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/">Jenkins</a>, and Jenkins provides <strong>multi-branch Pipeline</strong> for continuous integration and delivery, as shown in Fig2.  The jobs executing CI build tasks are <strong>dsg-openbmc-ci</strong> and <strong>dsg-openbmc-feature-ci</strong>, which are automatically  triggered by  corresponding trigger job .</p>
+<p>​    DSG BMC CI tasks are deployed in <a class="reference external" href="https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/EagleStreamPc/">Jenkins</a>, and Jenkins provides <strong>multi-branch Pipeline</strong> for continuous integration and delivery, as shown in Fig2.  The jobs executing CI build tasks are <strong>dsg-openbmc-ci</strong> and <strong>dsg-openbmc-feature-ci</strong>, which are automatically  triggered by  corresponding trigger job .</p>
 <ul class="simple">
 <li><p>The trigger job corresponding to dsg-openbmc-ci are dsg-openbmc-openbmc and <strong>dsg-openbmc-meta-intel</strong>. And the trigger job corresponding to dsg-openbmc-feature-ci is <strong>xx(features name)-trigger-job</strong>.
 <img alt="../../_images/p02.png" src="../../_images/p02.png" />
@@ -313,7 +316,7 @@ Fig8</p>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">apt</span><span class="o">.</span><span class="n">conf</span>
 
-\<span class="c1">## Add three lines to save：</span>
+<span class="c1">## Add three lines to save：</span>
 
 <span class="n">Acquire</span><span class="p">::</span><span class="n">http</span><span class="p">::</span><span class="n">Proxy</span> <span class="s2">&quot;http://child-prc.intel.com:913&quot;</span><span class="p">;</span>
 
@@ -339,8 +342,44 @@ Fig8</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="step5-create-a-gitlab-secret-key">
-<h3>Step5: Create a gitlab secret key<a class="headerlink" href="#step5-create-a-gitlab-secret-key" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="git-login-configure-with-confirmation-free">
+<h3>Git login configure with confirmation-free<a class="headerlink" href="#git-login-configure-with-confirmation-free" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create new file: .git-credentials</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="o">.</span><span class="n">git</span><span class="o">-</span><span class="n">credentials</span>
+<span class="n">vim</span> <span class="o">.</span><span class="n">git</span><span class="o">-</span><span class="n">credentials</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add github username and token</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">username</span><span class="p">:</span><span class="n">token</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Configure: .gitconfig</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="o">.</span><span class="n">gitconfig</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Force the git protocol to replace https</p></li>
+</ul>
+<div class="highlight-[http] notranslate"><div class="highlight"><pre><span></span>proxy = http://child-prc.intel.com:913
+sslverify = false
+[https]
+proxy = http://child-prc.intel.com:913
+[credential]
+helper = store
+[url &quot;https://&quot;]
+insteadOf = git://
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="step5-create-a-github-secret-key">
+<h2>Step5: Create a github secret key<a class="headerlink" href="#step5-create-a-github-secret-key" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Create key</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">C</span> <span class="s2">&quot; Email Address &quot;</span>
@@ -353,9 +392,9 @@ Fig8</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Open gitlab, paste the public key in ‘setting-&gt;SSH keys’ and save</p></li>
+<li><p>Open github, paste the public key in ‘setting-&gt;SSH and GPH keys’ and save</p></li>
 </ul>
-<p><img alt="../../_images/p11.png" src="../../_images/p11.png" /></p>
+<p><img alt="../../_images/P11.png" src="../../_images/P11.png" /></p>
 <ul class="simple">
 <li><p>SSH login without confirmation configuration (*Required, otherwise the feature code will not be pulled when building)</p></li>
 </ul>
@@ -367,7 +406,6 @@ Fig8</p>
 
 	<span class="n">UserKnownHostsFile</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
 </pre></div>
-</div>
 </div>
 <div class="section" id="step6-build-image">
 <h3>Step6:Build image<a class="headerlink" href="#step6-build-image" title="Permalink to this headline">¶</a></h3>

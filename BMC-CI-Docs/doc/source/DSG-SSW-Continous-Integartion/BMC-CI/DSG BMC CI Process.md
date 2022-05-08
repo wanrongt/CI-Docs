@@ -1,27 +1,25 @@
-# DSG BMC CI Process
+# EGS BMC CI Process
 
-##  Code repository — Gitlab
+##  Code repository — Github
 
-​        [Openbmc]( https://github.com/openbmc/openbmc) is an open source project , and the [DSG BMC ]( https://gitlab.devtools.intel.com/dsg-bmc ) project based on Openbmc is placed in [gitlab](https://gitlab.devtools.intel.com/). We mainly focus on four parts: [dsg-openbmc-openbmc](https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-openbmc),  [dsg-openbmc-meta-intel](https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-meta-intel), [features](https://gitlab.devtools.intel.com/dsg-bmc/features) and [openbmc-ci](https://gitlab.devtools.intel.com/dsg-bmc/openbmc-ci). As shown in Fig1.
+​        [OpenBMC]( https://github.com/openbmc/openbmc) project is a Linux Foundation project whose goal is to produce a customizable, open-source firmware stack for Baseboard Management Controllers (BMCs). 
+DSG BMC EGS platform is based on OpenBMC project. As for source code,we mainly focus on four parts as below:
 
--  **Dsg-openbmc-openbmc** is obtained by clone of the **Openbmc** in github.
+-  [**Dsg-openbmc-openbmc**](https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.dsg-openbmc-openbmc) is obtained by clone of the **OpenBMC** project.
 
--  **Dsg-openbmc-meta-intel** is a project where developers create their own branches for feature development. Some git address links,not the actual code, are placed in the dsg-openbmc-meta-intel file. And the project code of features can be pulled by these links.
--  The project source code is put in the **features** project, and the code is classified in terms of the featrues.
+-  [**Dsg-openbmc-meta-intel**](https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.dsg-openbmc-meta-intel) is a necessary repository with many git address links pointing feature repo. As almost all feature repo code need be pulled by these links,this repo is very important for our
+   daily build and plays a key role in platform development.
+   
+-  There're many featrue repo for BMC EGS platform in intel-collab organization,such as [**bmcweb**](https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.features.bmcweb)
 
-- Some Jenkinsfiles are stored in the **openbmc-ci** project, and we can know the CI build process details by **Jenkinsfile**.
-
-![](./Images/p01.png)
-
-​                                  Fig1. Schematic diagram of the DSG BMC project structure in gitlab
-
+- [openbmc-jenkins](https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.dsg-openbmc-openbmc) is a repo for **CI build**,and we can know the CI build process details by **Jenkinsfile**.
+![](./Images/P1.png)
+Fig1. Code repo in intel-collab organization
 ***
-
-
 
 ## CI Build tool — Jenkins
 
-​    DSG BMC CI tasks are deployed in [Jenkins](https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/ ), and Jenkins provides **multi-branch Pipeline** for continuous integration and delivery, as shown in Fig2.  The jobs executing CI build tasks are **dsg-openbmc-ci** and **dsg-openbmc-feature-ci**, which are automatically  triggered by  corresponding trigger job .
+​    DSG BMC CI tasks are deployed in [Jenkins](https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/EagleStreamPc/), and Jenkins provides **multi-branch Pipeline** for continuous integration and delivery, as shown in Fig2.  The jobs executing CI build tasks are **dsg-openbmc-ci** and **dsg-openbmc-feature-ci**, which are automatically  triggered by  corresponding trigger job .
 
 - The trigger job corresponding to dsg-openbmc-ci are dsg-openbmc-openbmc and **dsg-openbmc-meta-intel**. And the trigger job corresponding to dsg-openbmc-feature-ci is **xx(features name)-trigger-job**.
 ![](./Images/p02.png)
@@ -135,7 +133,7 @@ export https_proxy=http://child-prc.intel.com:913
 ```python
 sudo vim /etc/apt/apt.conf
 
-\## Add three lines to save：
+## Add three lines to save：
 
 Acquire::http::Proxy "http://child-prc.intel.com:913";
 
@@ -159,8 +157,39 @@ git config --global https.proxy http://child-prc.intel.com:913
 
 git config -l
 ```
+### Git login configure with confirmation-free 
 
-### Step5: Create a gitlab secret key
++ Create new file: .git-credentials
+
+```
+touch .git-credentials
+vim .git-credentials
+
+```
++ Add github username and token
+
+```
+https://username:token@github.com
+```
++ Configure: .gitconfig
+
+```
+vim .gitconfig
+```
+
++ Force the git protocol to replace https
+
+```[http]
+proxy = http://child-prc.intel.com:913
+sslverify = false
+[https]
+proxy = http://child-prc.intel.com:913
+[credential]
+helper = store
+[url "https://"]
+insteadOf = git://
+```
+## Step5: Create a github secret key
 
 * Create key
 
@@ -175,9 +204,9 @@ git config -l
 cat .ssh/id_rsa.pub
 ```
 
-* Open gitlab, paste the public key in ‘setting->SSH keys’ and save
+* Open github, paste the public key in ‘setting->SSH and GPH keys’ and save
 
-![](./Images/p11.png)
+![](./Images/P11.png)
 *  SSH login without confirmation configuration (*Required, otherwise the feature code will not be pulled when building)
 
 ```python

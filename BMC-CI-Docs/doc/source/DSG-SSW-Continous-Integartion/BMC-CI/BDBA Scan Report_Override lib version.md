@@ -1,4 +1,4 @@
-# BDBA Scan Report : Auto-override lib version
+# BDBA Scan Report
 ## Task Requirement:
 
 Here are the details about requirement requested by Xu,Qianjin:
