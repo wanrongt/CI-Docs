@@ -86,6 +86,8 @@ BUILD_NUMBER=$number MYMCU=AST2500 ./scripts/build.sh --release
 
 ### Build Configuration Files
 
+All the configuration files are store in [openbmc-jenkins](https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.openbmc-ci.openbmc-jenkins/commits/master) repo.
+
 (1) Buildconfig.json
 
 + Build script
@@ -172,9 +174,9 @@ We are expected to enable below three build types:
 + We set up a [Webhook](https://github.com/intel-collab/firmware.management.bmc.legacy.dsg-legacy-bmc/settings/hooks) for Legacybmc code repo and this webhook will keep our trigger job to be notified when code push events happen. 
 ![](./Images/p35.png)
 + Once trigger job has been notified, the trigger job will trigger downstream job: "dsg-legacybmc-whitley-ci".
-
-(2) Manual-trigger Method
 ![](./Images/p34.png)
+(2) Manual-trigger Method
+
 + The trigger method is the same as Purely FW Release build.
 
 ### Whitley FW Release build

@@ -19,7 +19,8 @@ Fig1. Code repo in intel-collab organization
 
 ## CI Build tool — Jenkins
 
-​    DSG BMC CI tasks are deployed in [Jenkins](https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/EagleStreamPc/), and Jenkins provides **multi-branch Pipeline** for continuous integration and delivery, as shown in Fig2.  The jobs executing CI build tasks are **dsg-openbmc-ci** and **dsg-openbmc-feature-ci**, which are automatically  triggered by  corresponding trigger job .
+​    
+DSG BMC CI tasks are deployed in [Jenkins](https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/EagleStreamPc/), and Jenkins provides **multi-branch Pipeline** for continuous integration and delivery, as shown in Fig2.  The jobs executing CI build tasks are **dsg-openbmc-ci** and **dsg-openbmc-feature-ci**, which are automatically  triggered by  corresponding trigger job .
 
 - The trigger job corresponding to dsg-openbmc-ci are dsg-openbmc-openbmc and **dsg-openbmc-meta-intel**. And the trigger job corresponding to dsg-openbmc-feature-ci is **xx(features name)-trigger-job**.
 ![](./Images/p02.png)

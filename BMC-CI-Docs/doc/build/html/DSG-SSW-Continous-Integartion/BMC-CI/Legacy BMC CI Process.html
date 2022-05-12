@@ -263,9 +263,11 @@
 <div class="section" id="build-command">
 <h3>Build Command<a class="headerlink" href="#build-command" title="Permalink to this headline">¶</a></h3>
 <p>For legacy BMC, it have two types of builds : debug build and release build.</p>
-<p>####1.Debug build:</p>
+<div class="section" id="debug-build">
+<h4>1.Debug build:<a class="headerlink" href="#debug-build" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>BUILD_NUMBER=$number MYMCU=AST2500 ./scripts/build.sh
 </pre></div>
+</div>
 </div>
 <div class="section" id="release-build">
 <h4>2.Release build:<a class="headerlink" href="#release-build" title="Permalink to this headline">¶</a></h4>
@@ -276,6 +278,7 @@
 </div>
 <div class="section" id="build-configuration-files">
 <h3>Build Configuration Files<a class="headerlink" href="#build-configuration-files" title="Permalink to this headline">¶</a></h3>
+<p>All the configuration files are store in <a class="reference external" href="https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.openbmc-ci.openbmc-jenkins/commits/master">openbmc-jenkins</a> repo.</p>
 <p>(1) Buildconfig.json</p>
 <ul class="simple">
 <li><p>Build script</p></li>
@@ -364,10 +367,12 @@
 </div>
 <div class="section" id="how-to-trigger-build-based-on-tag-in-jenkins">
 <h4>2.How to trigger build based on tag in Jenkins<a class="headerlink" href="#how-to-trigger-build-based-on-tag-in-jenkins" title="Permalink to this headline">¶</a></h4>
-<p>(1). Click on “Build with Parameters” to manually trigger build
-(2). Click on “Build Type” to choose build type: debug or release
-(3). Click on “purley_bmc_tag” to fill in the tag name, and the default value is “v2.88g-purley-q4can3-2021”
-(4). Click on  “Build” to run this build job</p>
+<ul class="simple">
+<li><p>(1). Click on “Build with Parameters” to manually trigger build</p></li>
+<li><p>(2). Click on “Build Type” to choose build type: debug or release</p></li>
+<li><p>(3) Click on “purley_bmc_tag” to fill in the tag name, and the default value is “v2.88g-purley-q4can3-2021”</p></li>
+<li><p>(4). Click on  “Build” to run this build job</p></li>
+</ul>
 <p><img alt="../../_images/p28.png" src="../../_images/p28.png" /></p>
 </div>
 </div>
@@ -386,11 +391,9 @@
 <ul class="simple">
 <li><p>We set up a <a class="reference external" href="https://github.com/intel-collab/firmware.management.bmc.legacy.dsg-legacy-bmc/settings/hooks">Webhook</a> for Legacybmc code repo and this webhook will keep our trigger job to be notified when code push events happen.
 <img alt="../../_images/p35.png" src="../../_images/p35.png" /></p></li>
-<li><p>Once trigger job has been notified, the trigger job will trigger downstream job: “dsg-legacybmc-whitley-ci”.</p></li>
-</ul>
-<p>(2) Manual-trigger Method
-<img alt="../../_images/p34.png" src="../../_images/p34.png" /></p>
-<ul class="simple">
+<li><p>Once trigger job has been notified, the trigger job will trigger downstream job: “dsg-legacybmc-whitley-ci”.
+<img alt="../../_images/p34.png" src="../../_images/p34.png" />
+(2) Manual-trigger Method</p></li>
 <li><p>The trigger method is the same as Purely FW Release build.</p></li>
 </ul>
 </div>
