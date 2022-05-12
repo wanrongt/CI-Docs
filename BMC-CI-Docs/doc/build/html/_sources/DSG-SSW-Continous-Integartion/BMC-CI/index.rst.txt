@@ -10,6 +10,7 @@ BMC CI
    :maxdepth: 2
    :caption: Contents:
 
-   DSG BMC CI Process
-   BDBA Scan Report_Override lib version
+   EGS BMC CI Process
+   Legacy BMC CI Process
+   BDBA Scan Report
 

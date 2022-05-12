@@ -12,7 +12,7 @@ DSG BMC EGS platform is based on OpenBMC project. As for source code,we mainly f
    
 -  There're many featrue repo for BMC EGS platform in intel-collab organization,such as [**bmcweb**](https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.features.bmcweb)
 
-- [openbmc-jenkins](https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.dsg-openbmc-openbmc) is a repo for **CI build**,and we can know the CI build process details by **Jenkinsfile**.
+- [**Openbmc-jenkins**](https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.openbmc-ci.openbmc-jenkins) is a repo for **CI build**,and we can know the CI build process details by **Jenkinsfile**.
 ![](./Images/P1.png)
 Fig1. Code repo in intel-collab organization
 ***
@@ -47,9 +47,9 @@ Fig6
 
 
 
-## Build DSG BMC project
+## How to build BMC EGS Server Platform FW
 
- ## Trigger automatically build tasks by Jenkins
+### Trigger automatically build tasks in Jenkins
 
 The dsg-openbmc-ci and dsg-openbmc-feature-ci have corresponding automatic trigger mode, and the trigger relationship diagram is shown in Fig7.
 
@@ -72,21 +72,23 @@ Fig7
 
 
 
-## Trigger manually tasks by Jenkins
+### Trigger manually build tasks in Jenkins
 ​    Take dsg-openbmc-feature-ci job as an example, click to select the master branch,
 
 ![](./Images/08.png)
 Fig8
-### Step1: Click the ‘Build with Parameters
+#### Step1: Click the ‘Build with Parameters
 
-### Step2: Select the feature branch to be built in the Feature drop-down box, and fill in the branch name
+#### Step2: Select the feature branch to be built in the Feature drop-down box, and fill in the branch name
 
-### Step3: Click the Build button to start the task
+#### Step3: Click the Build button to start the task
 
 ![](./Images/p09.png)
-## Build manually by command in the MobaXterm
+### Build manually with local server
+#### Prerequisites
+A server with ubuntu 20.04.3 LTS
 
-### step1: Set user permission 
+#### step1: Set user permission 
 
 - Create a user account (take jenkins as an example )
 
@@ -113,7 +115,7 @@ Fig8
   jenkins ALL=(ALL) NOPASSWD:ALL
   ```
 
-### Step2:Set up agent
+#### Step2:Set up agent
 
 * Set up system agent:
 
@@ -142,13 +144,13 @@ Acquire::ftp::proxy "http://child-prc.intel.com:913";
 Acquire::https::proxy "http://child-prc.intel.com:913";
 ```
 
-### Step3: Installation tools
+#### Step3: Installation tools
 
 ```python
 sudo apt-get -y update --fix-missing && apt-get -y install --no-install-recommends apt-utils 2>&1 && apt-get -y install cmake git lib32tinfo6 libicu[0-9][0-9] lsb-release net-tools ninja-build openjdk-8-jdk make p7zip-full procps python3 python3-pip python3-venv wget curl rsync iputils-ping chrpath texinfo cpio diffstat gawk locales --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get -y install gcc g++ libkrb5-dev krb5-user uuid-dev libudev-dev libc6-dev libstdc++6 libstdc++-10-dev build-essential sqlite libsqlite3-dev libpcap-dev libssl-dev libsystemd-dev patchelf zip unzip vim dos2unix linux-headers-generic libelf-dev tree sudo md5deep mlocate && updatedb && locale-gen en_US.UTF-8 && update-locale && wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb && apt-get -y update --fix-missing && apt-get -y install apt-transport-https dotnet-sdk-3.1 && python3 -m pip install --upgrade setuptools pip && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 ```
 
-### Step4: Set up git agent
+#### Step4: Set up git agent
 
 ```python
 git config --global http.proxy http://child-prc.intel.com:913
@@ -157,7 +159,7 @@ git config --global https.proxy http://child-prc.intel.com:913
 
 git config -l
 ```
-### Git login configure with confirmation-free 
+#### Git login configure with confirmation-free 
 
 + Create new file: .git-credentials
 
@@ -189,7 +191,7 @@ helper = store
 [url "https://"]
 insteadOf = git://
 ```
-## Step5: Create a github secret key
+#### Step5: Create a github secret key
 
 * Create key
 
@@ -219,7 +221,7 @@ Host *
 	UserKnownHostsFile /dev/null
 ```
 
-### Step6:Build image
+#### Step6:Build image
 
 * Clone code
 
@@ -270,7 +272,7 @@ time bitbake intel-platforms
 
 * After the build is successful, the image is placed under the path: ~/openbmc/build/tmp/deploy/images/intel-ast2600/pfr_images
 
-## View the build result 
+## How to View the build result
 
 
 
@@ -287,7 +289,7 @@ time bitbake intel-platforms
 ④  If the build fails, analyzethe reason from the log
 ![](Images/p14.png)
 
-## Find  the image 
+## Where to find build artifacts
 
 ### Step1:Select a certain submission of dag-openbmc-meta-intel branch in the gitlab, such as Move DC power on/off log to currrentPowerStateMonitor Committed by **[Rao, Xinglong](https://gitlab.devtools.intel.com/raoxingl)** 
 
