@@ -166,7 +166,9 @@ We are expected to enable below three build types:
 #### 1.Trigger job: [dsg-legacybmc-whitley-trigger-job](https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/WhitleyPc/job/dsg-legacybmc-whitley-trigger-job/job/master-wht/)
 
 #### 2.Build job: [dsg-legacybmc-whitley-ci](https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/WhitleyPc/job/dsg-legacybmc-whitley-ci/)
+
 ![](./Images/p32.png)
+
 #### 3.How to trigger build
 
 (1) Auto-trigger Mechanism
