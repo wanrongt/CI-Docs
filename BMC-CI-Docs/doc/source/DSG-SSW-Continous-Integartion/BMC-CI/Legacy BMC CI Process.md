@@ -159,7 +159,7 @@ We are expected to enable below three build types:
 + (3) Click on "purley_bmc_tag" to fill in the tag name, and the default value is "v2.88g-purley-q4can3-2021"
 + (4). Click on  "Build" to run this build job
 
-![](./Images/p28.png)
+![](./Images/p36.png)
 
 ### Whitley PR debug build
 
