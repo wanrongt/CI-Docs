@@ -30,7 +30,7 @@ Debug and release build key related files need to be stored in build server befo
 
 #### 2.Release build key
 
-- release build key is obtained via Tulum server with SSH connection 
+- Release build key is obtained via Tulum server with SSH connection 
 
   ```
   Hostname tulum.jf.intel.com
