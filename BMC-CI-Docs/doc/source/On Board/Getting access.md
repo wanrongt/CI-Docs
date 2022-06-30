@@ -119,4 +119,12 @@
    DevTools Protex Application User All servers - Blue Badge Employees 
    ```
 
++ **Snyk**
+
+1.Pls apply for below entitlement at first:
+```
+  DEVTOOLS-SNYK-DSG-OPENBMC-Developer
+```
+2.After the entitlement application is approved,you need wait 48hr+ to receive invitation email from IT scan team
+
    
