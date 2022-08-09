@@ -51,19 +51,19 @@ Add the build step to the manifest:
 ```
 **Build Process:**
 
-(1) git clone dev branch code
-    (Now in Intel Repo k:/Intel)
-(2) git pull git pull origin platform/eaglestreampc_dsg_main 
-    (synchronize platform/eaglestreampc_dsg_main branch code of Intel repo into the build environment)
-(3) git push origin dev/eaglestreampc_dsg_smi/zhikaisu
-    (Push code from the build environment to the remote repository to synchronize the remote Intel repository's code)
-(4) cd ../FDBin
-    (Switch to the FDBin directory)
-(5) git pull origin platform/eaglestreampc_dsg_main
-    (synchronize platform/eaglestreampc_dsg_main branch code of FDBin repo into the build environment)
-(6) git push origin dev/eaglestreampc_dsg_fdbin/mal
-    (Push code from the build environment to the remote repository to synchronize the remote FDBin repository's code)
-(7) cd ../Intel
-    (Switch to the Intel directory for compile the code)
-(8) c:\python36\python.exe EagleStreamPcPkg\PlatformBIOSBuild.py -b DEBUG -t VS15
+(1) git clone dev branch code\
+    (Now in Intel Repo k:/Intel)\
+(2) git pull git pull origin platform/eaglestreampc_dsg_main\
+    (synchronize platform/eaglestreampc_dsg_main branch code of Intel repo into the build environment)\
+(3) git push origin dev/eaglestreampc_dsg_smi/zhikaisu\
+    (Push code from the build environment to the remote repository to synchronize the remote Intel repository's code)\
+(4) cd ../FDBin\
+    (Switch to the FDBin directory)\
+(5) git pull origin platform/eaglestreampc_dsg_main\
+    (synchronize platform/eaglestreampc_dsg_main branch code of FDBin repo into the build environment)\
+(6) git push origin dev/eaglestreampc_dsg_fdbin/mal\
+    (Push code from the build environment to the remote repository to synchronize the remote FDBin repository's code)\
+(7) cd ../Intel\
+    (Switch to the Intel directory for compile the code)\
+(8) c:\python36\python.exe EagleStreamPcPkg\PlatformBIOSBuild.py -b DEBUG -t VS15\
     (compile the code)
