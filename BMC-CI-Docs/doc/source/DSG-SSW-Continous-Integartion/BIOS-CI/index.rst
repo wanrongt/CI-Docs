@@ -15,3 +15,5 @@ BIOS CI
    3 Daily_settings
    4 BDBA_scan
    5 Klocwork_scan
+   6 Protex_scan
+   7 Engineer_build_process
