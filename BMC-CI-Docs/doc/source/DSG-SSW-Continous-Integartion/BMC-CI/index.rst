@@ -11,6 +11,7 @@ BMC CI
    :caption: Contents:
 
    EGS BMC CI Process
+   EGS SDP Build
    Legacy BMC CI Process
    BDBA Scan Report
 
