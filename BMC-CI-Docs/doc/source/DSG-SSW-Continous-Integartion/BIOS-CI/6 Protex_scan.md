@@ -1,14 +1,15 @@
 Protex scan
 ===================================
 
-Protex server: https://amrprotex004.devtools.intel.com/
+**Protex server**: https://amrprotex004.devtools.intel.com/
 
 **1. Create protex scan project**
 
 After applying for login permission to the protex server, you can clone a similar project when you want add a new protex
  project.
  
- How to clone a protex project? https://wiki.ith.intel.com/display/ITSFID/Cloning+a+Protex+Project
+ How to clone a protex project?\
+ https://wiki.ith.intel.com/display/ITSFID/Cloning+a+Protex+Project
  
 **2. Update the manifest**
  
@@ -41,6 +42,7 @@ update the protex_project parameters from eaglestreampc_dsg_main combo level and
 ![](./images/6_4.png)
 
 **4. Test run the protex_IP_scan target in teamcity**
+Copy the manifest PR branch to iafw-cr-manifest parameter.
 
 ![](./images/6_5.png)
 

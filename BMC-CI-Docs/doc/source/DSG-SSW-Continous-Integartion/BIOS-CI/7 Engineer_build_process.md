@@ -9,10 +9,10 @@ Engineer builds like the developer builds requires five repos, the difference is
 **1. create new branch for Intel and FDBin repo**
 
 Colleagues in the engineer team will create the new branch and push the code to github.
-Since these branch need to be distinguished from the developer build, so the branch belong to the dev type. 
-For example:
-Intel: dev/eaglestreampc_dsg_smi/zhikaisu
-FDBin: dev/eaglestreampc_dsg_fdbin/mal
+Since these branch need to be distinguished from the developer build, so the branch belong to the dev type.\
+For example:\
+Intel: dev/eaglestreampc_dsg_smi/zhikaisu\
+FDBin: dev/eaglestreampc_dsg_fdbin/mal\
 
 **2. Update the manifest**
 
@@ -53,7 +53,7 @@ Add the build step to the manifest:
 
 (1) git clone dev branch code\
     (Now in Intel Repo k:/Intel)\
-(2) git pull git pull origin platform/eaglestreampc_dsg_main\
+(2) git pull origin platform/eaglestreampc_dsg_main\
     (synchronize platform/eaglestreampc_dsg_main branch code of Intel repo into the build environment)\
 (3) git push origin dev/eaglestreampc_dsg_smi/zhikaisu\
     (Push code from the build environment to the remote repository to synchronize the remote Intel repository's code)\
