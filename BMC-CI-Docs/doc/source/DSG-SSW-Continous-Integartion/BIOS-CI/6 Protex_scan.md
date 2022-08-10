@@ -42,6 +42,7 @@ update the protex_project parameters from eaglestreampc_dsg_main combo level and
 ![](./images/6_4.png)
 
 **4. Test run the protex_IP_scan target in teamcity**
+
 Copy the manifest PR branch to iafw-cr-manifest parameter.
 
 ![](./images/6_5.png)
