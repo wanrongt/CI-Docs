@@ -12,6 +12,7 @@ BMC CI
 
    EGS BMC CI Process
    EGS SDP Build
+   BHS BMC CI Process
    Legacy BMC CI Process
    BDBA Scan Report
 

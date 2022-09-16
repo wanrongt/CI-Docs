@@ -17,3 +17,5 @@ BIOS CI
    5 Klocwork_scan
    6 Protex_scan
    7 Engineer_build_process
+   8 Birchstream_build_process
+

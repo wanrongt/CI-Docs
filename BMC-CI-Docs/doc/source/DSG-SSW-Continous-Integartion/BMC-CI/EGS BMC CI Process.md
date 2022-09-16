@@ -127,8 +127,8 @@ A server with ubuntu 20.04.3 LTS
 * Add two lines to save：
 
 ```python
-export http_proxy=http://child-prc.intel.com:913
-export https_proxy=http://child-prc.intel.com:913
+export http_proxy=http://child-prc.intel.com:912
+export https_proxy=http://child-prc.intel.com:912
 ```
 
 * Set up apt agent：
@@ -138,11 +138,11 @@ sudo vim /etc/apt/apt.conf
 
 ## Add three lines to save：
 
-Acquire::http::Proxy "http://child-prc.intel.com:913";
+Acquire::http::Proxy "http://child-prc.intel.com:912";
 
-Acquire::ftp::proxy "http://child-prc.intel.com:913";
+Acquire::ftp::proxy "http://child-prc.intel.com:912";
 
-Acquire::https::proxy "http://child-prc.intel.com:913";
+Acquire::https::proxy "http://child-prc.intel.com:912";
 ```
 
 #### Step3: Installation tools
@@ -154,9 +154,9 @@ sudo apt-get -y update --fix-missing && apt-get -y install --no-install-recommen
 #### Step4: Set up git agent
 
 ```python
-git config --global http.proxy http://child-prc.intel.com:913
+git config --global http.proxy http://child-prc.intel.com:912
 
-git config --global https.proxy http://child-prc.intel.com:913
+git config --global https.proxy http://child-prc.intel.com:912
 
 git config -l
 ```
@@ -183,16 +183,17 @@ vim .gitconfig
 + Force the git protocol to replace https
 
 ```[http]
-proxy = http://child-prc.intel.com:913
-sslverify = false
+[http]
+    proxy = http://child-prc.intel.com:912
+    sslverify = false
 [https]
-proxy = http://child-prc.intel.com:913
+	proxy = http://child-prc.intel.com:912
 [credential]
-helper = store
+	helper = store
 [url "https://"]
-insteadOf = git://
+	insteadOf = git://
 ```
-#### Step5: Create a github secret key
+#### Step5: Create a gitlab secret key (only for repo using SSH protocol)
 
 * Create key
 
@@ -200,16 +201,16 @@ insteadOf = git://
   ssh-keygen -t rsa -C " Email Address "
   ```
 
- 
+
 * Copy the public key to gitlab
 
 ```
 cat .ssh/id_rsa.pub
 ```
 
-* Open github, paste the public key in ‘setting->SSH and GPH keys’ and save
+* Open githlab, paste the public key in ‘setting->SSH and GPH keys’ and save
 
-![](./Images/P11.png)
+
 *  SSH login without confirmation configuration (*Required, otherwise the feature code will not be pulled when building)
 
 ```python
@@ -229,16 +230,16 @@ Host *
   ```python
   cd ~
   
-  git clone https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-openbmc.git
+  git clone https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.dsg-openbmc-openbmc.git
   
-  git clone https://gitlab.devtools.intel.com/dsg-bmc/dsg-openbmc-meta-intel.git
+  git clone https://github.com/intel-collab/firmware.management.bmc.dsg-openbmc.dsg-openbmc-meta-intel.git
   
   mv dsg-openbmc-openbmc openbmc
   
   mv dsg-openbmc-meta-intel openbmc/openbmc-meta-intel
   ```
 
-* create workspace
+* Create workspace
 
   ```
   cd /home/jenkins/openbmc/
@@ -248,36 +249,35 @@ Host *
   source oe-init-build-env
   ```
 
-  
 * Modify the thread to speed up the build
 
-```python
-vim ~/jenkins/openbmc/build/conf/local.conf
- 
-#Add the following two lines：
+  ```
+  vim ~/jenkins/openbmc/build/conf/local.conf
+   
+  #Add the following two lines：
+  
+  BB_NUMBER_THREADS ?= "16"
+  
+  PARALLEL_MAKE ?= "-j16"
+  ```
 
-BB_NUMBER_THREADS ?= "16"
+* Execute **build command** 
 
-PARALLEL_MAKE ?= "-j16"
-```
+  ```
+  cd ~/jenkins/openbmc/build
+  
+  time bitbake intel-platforms
+  ```
 
-* **build command**，Remember to clear the openbmc/build/download folder cache before each build and execute the build command
+* After the build is successful, build artifacts/images are placed under the path: 
 
-```python
-cd ~/jenkins/openbmc/build
-
-time bitbake intel-platforms
-```
-
- 
-
-* After the build is successful, the image is placed under the path: ~/openbmc/build/tmp/deploy/images/intel-ast2600/pfr_images
+  ```
+  ~/openbmc/build/tmp/deploy/images/intel-ast2600/pfr_images
+  ```
 
 ## How to View the build result
 
-
-
-①   Take dsg-openbmc-ci as an example, you can see the build result on the branch interface, green dot means success, red dot means failure
+①   Take **dsg-openbmc-ci** as an example, you can see the build result on the branch interface: green dot means success, red dot means failure
 
 ![](Images/p12.png)  
 
@@ -286,21 +286,18 @@ time bitbake intel-platforms
 
 ③  Click ‘Open Blue Ocean’ icon to see the detailed process of the build, click the icon in the lower right corner to see the log
 ![](Images/p15.png)  
- 
-④  If the build fails, analyzethe reason from the log
+
+④  If the build fails, analyze the reason from the build log
 ![](Images/p14.png)
 
 ## Where to find build artifacts
 
-### Step1:Select a certain submission of dag-openbmc-meta-intel branch in the gitlab, such as Move DC power on/off log to currrentPowerStateMonitor Committed by **[Rao, Xinglong](https://gitlab.devtools.intel.com/raoxingl)** 
+### Step1:Select a certain code check in , such as "Bump packages" by CI faceless account
 
 ![](Images/p16.png)
 
-### Step2: Click the address behind the pipeline:  #5287140
+### Step2: Click "Details" button then jump to jenkins interface
 
-![](Images/p17.png)
-### Step3:Click on the 'buildci' icon
-![](Images/p18.png)
-### Step4:Open the website search in the picture and find the corresponding zip file to download
+### Step3:Open the website search in the picture and find the corresponding zip file to download
 ![](Images/p19.png)
 ![](Images/p20.png)
