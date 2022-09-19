@@ -33,7 +33,7 @@ Birchstreampc platform is next generation server products ,so we need to enable 
   <Project name="BirchStreamPc" xmlPath="DSG/BirchStreamPc/BirchStreamPcManifest.xml" />
  ```
 
-+ Manifest patch merged : https://github.com/intel-innersource/firmware.boot.uefi.iafw.devops.ci.cr.manifest/pull/7426
++ Manifest patch merged : [https://github.com/intel-innersource/firmware.boot.uefi.iafw.devops.ci.cr.manifest/pull/7426](https://github.com/intel-innersource/firmware.boot.uefi.iafw.devops.ci.cr.manifest/pull/7426)
 
 ## Configure new build targets 
 
