@@ -67,7 +67,7 @@
 + Openbmc-openbmc trigger job : [https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/BirchstreamPc/job/dsg-bhs-openbmc-openbmc-trigger/](https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/BirchstreamPc/job/dsg-bhs-openbmc-openbmc-trigger/)
 + Meta-intel trigger job : [https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/BirchstreamPc/job/dsg-bhs-meta-intel-trigger/](https://cbjenkins-pg.devtools.intel.com/teams-dsgbmc/job/dsgbmc/job/BirchstreamPc/job/dsg-bhs-openbmc-openbmc-trigger/)
 
-![](./Images/P37.png)
+![](./Images/p37.png)
 
 <center>Fig1 : Trigger job in Jenkins</center>
 
