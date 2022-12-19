@@ -14,5 +14,7 @@ BMC CI
    EGS SDP Build
    BHS BMC CI Process
    Legacy BMC CI Process
-   BDBA Scan Report
+   EGS BDBA Scan Report
+   Purley and Whitley BMC Scan
+   EGSWhitleyPurley BMC Web code for Firmware Customization
 
